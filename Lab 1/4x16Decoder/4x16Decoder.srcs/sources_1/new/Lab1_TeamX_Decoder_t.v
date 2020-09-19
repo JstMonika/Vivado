@@ -20,8 +20,8 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module Decoder_t;
-reg din = 4'b0;
-reg dout = 16'b0;
+reg [3:0] din = 4'b0;
+wire [15:0] dout;
 
 Decoder d1( .din(din), .dout(dout));
 
