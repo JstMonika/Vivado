@@ -20,7 +20,29 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module t(
-
-    );
+module tb();
+    
+    reg [7:0] a, b;
+    reg cin;
+    wire [8:0] out;
+    
+    RippleCarryAdder RCA1(.a(a), .b(b), .cin(cin), .cout(out[8]), .sum(out[7:0]));
+    
+    initial begin
+        
+        a = 8'd0;
+        b = 8'd0;
+        cin = 1'd0;
+        
+        repeat (2 ** 5) begin
+            #1
+            
+            a = a + 8'd5;
+            b = b + 8'd11;
+            cin = ~cin;
+            
+        end
+    
+    end
+    
 endmodule
