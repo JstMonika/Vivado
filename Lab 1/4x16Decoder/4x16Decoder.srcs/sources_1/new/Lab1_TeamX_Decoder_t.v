@@ -19,8 +19,17 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+module Decoder_t;
+reg din = 4'b0;
+reg dout = 16'b0;
 
-module Lab1_TeamX_Decoder_t(
+Decoder d1( .din(din), .dout(dout));
 
-    );
+initial begin
+	repeat (2**4) begin
+	  $display("Now din = %d and dout = %d",din,dout);
+	  #1 din = din + 1'b1;
+	end
+	#1 $finish;
+end
 endmodule
