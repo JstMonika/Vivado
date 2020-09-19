@@ -42,7 +42,8 @@ module tb();
             cin = ~cin;
             
         end
-    
+        
+        #1 $finish;
     end
     
 endmodule

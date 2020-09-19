@@ -480,4 +480,4 @@ correct
 Now a = 15, b = 14
 correct
 Now a = 15, b = 15
-$finish called at time : 273 ns : File "E:/Code/Vivado/Lab 1/Comparator_4bits/Comparator_4bits.srcs/sources_1/new/Lab1_TeamX_Comparator_4bits_t.v" Line 30
+$finish called at time : 273 ns : File "E:/Code/Vivado/Lab 1/Comparator_4bits/Comparator_4bits.srcs/sources_1/new/Lab1_TeamX_Comparator_4bits_t.v" Line 29
