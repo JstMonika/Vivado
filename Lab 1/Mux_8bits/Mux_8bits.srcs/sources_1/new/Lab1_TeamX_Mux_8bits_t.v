@@ -24,14 +24,14 @@ module tb();
 
     reg [7:0] a, b, c, d;
     wire [7:0] out;
-    reg [1:0] sel;
+    reg [2:0] sel;
     
     initial begin
         a = 8'b00000000;
         b = 8'b00001111;
         c = 8'b11110000;
         d = 8'b11111111;
-        sel = 2'b00;
+        sel = 3'b000;
     end
     
     Mux_8bits mod1(
@@ -39,15 +39,15 @@ module tb();
         .b(b),
         .c(c),
         .d(d),
-        .sel1(sel[0]),
-        .sel2(sel[0]),
-        .sel3(sel[1]),
+        .sel1(sel[2]),
+        .sel2(sel[1]),
+        .sel3(sel[0]),
         .f(out)
     );
     
     initial begin
         #1
-        repeat (2 ** 2) begin
+        repeat (2 ** 3) begin
             
             #1 sel = sel + 1'b1;
             
