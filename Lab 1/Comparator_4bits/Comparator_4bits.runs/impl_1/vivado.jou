@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Tue Sep 22 22:34:56 2020
+# Process ID: 32856
+# Current directory: E:/Code/Vivado/Lab 1/Comparator_4bits/Comparator_4bits.runs/impl_1
+# Command line: vivado.exe -log Comparator_4bits.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source Comparator_4bits.tcl -notrace
+# Log file: E:/Code/Vivado/Lab 1/Comparator_4bits/Comparator_4bits.runs/impl_1/Comparator_4bits.vdi
+# Journal file: E:/Code/Vivado/Lab 1/Comparator_4bits/Comparator_4bits.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source Comparator_4bits.tcl -notrace
