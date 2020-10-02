@@ -55,7 +55,7 @@
 typedef void (*funcp)(char *, char *);
 extern int main(int, char**);
 IKI_DLLESPEC extern void execute_35(char*, char *);
-IKI_DLLESPEC extern void execute_153(char*, char *);
+IKI_DLLESPEC extern void vlog_const_rhs_process_execute_0_fast_no_reg_no_agg(char*, char*, char*);
 IKI_DLLESPEC extern void execute_154(char*, char *);
 IKI_DLLESPEC extern void execute_155(char*, char *);
 IKI_DLLESPEC extern void execute_41(char*, char *);
@@ -78,7 +78,7 @@ IKI_DLLESPEC extern void execute_159(char*, char *);
 IKI_DLLESPEC extern void execute_160(char*, char *);
 IKI_DLLESPEC extern void execute_161(char*, char *);
 IKI_DLLESPEC extern void vlog_transfunc_eventcallback(char*, char*, unsigned, unsigned, unsigned, char *);
-funcp funcTab[24] = {(funcp)execute_35, (funcp)execute_153, (funcp)execute_154, (funcp)execute_155, (funcp)execute_41, (funcp)execute_42, (funcp)execute_43, (funcp)execute_44, (funcp)execute_45, (funcp)execute_51, (funcp)execute_52, (funcp)execute_53, (funcp)execute_54, (funcp)execute_37, (funcp)execute_38, (funcp)execute_39, (funcp)execute_40, (funcp)execute_156, (funcp)execute_157, (funcp)execute_158, (funcp)execute_159, (funcp)execute_160, (funcp)execute_161, (funcp)vlog_transfunc_eventcallback};
+funcp funcTab[24] = {(funcp)execute_35, (funcp)vlog_const_rhs_process_execute_0_fast_no_reg_no_agg, (funcp)execute_154, (funcp)execute_155, (funcp)execute_41, (funcp)execute_42, (funcp)execute_43, (funcp)execute_44, (funcp)execute_45, (funcp)execute_51, (funcp)execute_52, (funcp)execute_53, (funcp)execute_54, (funcp)execute_37, (funcp)execute_38, (funcp)execute_39, (funcp)execute_40, (funcp)execute_156, (funcp)execute_157, (funcp)execute_158, (funcp)execute_159, (funcp)execute_160, (funcp)execute_161, (funcp)vlog_transfunc_eventcallback};
 const int NumRelocateId= 24;
 
 void relocate(char *dp)
