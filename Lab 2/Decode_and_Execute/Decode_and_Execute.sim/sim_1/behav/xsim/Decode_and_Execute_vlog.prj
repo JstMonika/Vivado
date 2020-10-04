@@ -1,0 +1,9 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../Decode_and_Execute.srcs/sources_1/imports/Lab 2/Lab2_Team3_Decode_and_Execute.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
