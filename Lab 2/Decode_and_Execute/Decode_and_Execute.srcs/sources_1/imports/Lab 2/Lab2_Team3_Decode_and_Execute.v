@@ -16,8 +16,12 @@ module Decode_and_Execute (op_code, rs, rt, rd);
     MUX mux5 [3:0] (duu, dud, op_code[0], du);
     MUX mux6 [3:0] (uuu, uud, op_code[0], uu);
     
+    wire z, o;
+    zero z1(z, rs[0]);
+    onr o1(o, rs[0]);
+    
     f_bit_adder fba1(rs, rt, dd, op_code[0]);
-    f_bit_adder fba2(rs, 4'b0001, dud, 1'b0);
+    f_bit_adder fba2(rs, {3{z}, o}, dud, z);
     
     nor nor1 [3:0] (duu, rs, rt);
     NAND nand1 [3:0] (udd, rs, rt);
@@ -28,10 +32,10 @@ module Decode_and_Execute (op_code, rs, rt, rd);
     mul mul1(uud, rs);
     Multiplier mul2(rs, rt, result);
     
-    AND and1(uuu[0], 1'b1, result[0]);
-    AND and2(uuu[1], 1'b1, result[1]);
-    AND and3(uuu[2], 1'b1, result[2]);
-    AND and4(uuu[3], 1'b1, result[3]);
+    AND and1(uuu[0], result[0], result[0]);
+    AND and2(uuu[1], result[1], result[1]);
+    AND and3(uuu[2], result[2], result[2]);
+    AND and4(uuu[3], result[3], result[3]);
     
 endmodule
 
@@ -40,10 +44,10 @@ module div(out, in);
     input [3:0] in;
     output [3:0] out;
     
-    AND and1(out[0], 1'b1, in[2]);
-    AND and2(out[1], 1'b1, in[3]);
-    AND and3(out[2], 1'b1, 1'b0);
-    AND and4(out[3], 1'b1, 1'b0);
+    AND and1(out[0], in[2], in[2]);
+    AND and2(out[1], in[3], in[3]);
+    XOR and3(out[2], in[0], in[0]);
+    XOR and4(out[3], in[0], in[0]);
     
 endmodule
 
@@ -52,10 +56,10 @@ module mul(out, in);
     input [3:0] in;
     output [3:0] out;
     
-    AND and1(out[0], 1'b1, 1'b0);
-    AND and2(out[1], 1'b1, in[0]);
-    AND and3(out[2], 1'b1, in[1]);
-    AND and4(out[3], 1'b1, in[2]);
+    XOR and1(out[0], in[0], in[0]);
+    AND and2(out[1], in[0], in[0]);
+    AND and3(out[2], in[1], in[1]);
+    AND and4(out[3], in[2], in[2]);
     
 endmodule
 
@@ -89,19 +93,23 @@ module Multiplier (a, b, p);
     wire [5:0] down;
     
     wire mid;
-    nor nor1(mid, B0[0], B0[0]);
-    nor nor2(p[0], mid, 1'b0); 
     
-    adder add1(B0[1], B1[0], 1'b0, carry[0], p[1]);
+    wire z;
+    zero z1(z, b[0]);
+    
+    nor nor1(mid, B0[0], B0[0]);
+    nor nor2(p[0], mid, z); 
+    
+    adder add1(B0[1], B1[0], z, carry[0], p[1]);
     
     adder add2(B0[2], B1[1], carry[0], carry[1], down[0]);
-    adder add3(B2[0], down[0], 1'b0, carry[2], p[2]);
+    adder add3(B2[0], down[0], z, carry[2], p[2]);
     
     adder add4(B0[3], B1[2], carry[1], carry[3], down[1]);
     adder add5(B2[1], down[1], carry[2], carry[4], down[2]);
-    adder add6(B3[0], down[2], 1'b0, carry[5], p[3]);
+    adder add6(B3[0], down[2], z, carry[5], p[3]);
     
-    adder add7(B1[3], 1'b0, carry[3], carry[6], down[3]);
+    adder add7(B1[3], z, carry[3], carry[6], down[3]);
     adder add8(B2[2], down[3], carry[4], carry[7], down[4]);
     adder add9(B3[1], down[4], carry[5], carry[8], p[4]);
     
@@ -203,4 +211,22 @@ module f_bit_adder(a, b, sum, sel);
     adder add3(a[2], B[2], c[1], c[2], sum[2]);
     adder add4(a[3], B[3], c[2], , sum[3]);
         
+endmodule
+
+module zero(out, in);
+
+    input in;
+    output out;
+    
+    XOR xor1(out, in, in);
+
+endmodule
+
+module one(out, in);
+
+    input in;
+    output out;
+    
+    XNOR xnor1(in, in, out);
+
 endmodule

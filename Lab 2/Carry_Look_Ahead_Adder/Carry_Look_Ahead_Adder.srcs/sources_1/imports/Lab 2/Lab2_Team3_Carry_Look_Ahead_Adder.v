@@ -9,7 +9,7 @@ output [4-1:0] sum;
     wire [3:0] p, g;
     wire [3:0] c;
     
-    AND and0(c[0], 1'b1, cin);
+    AND and0(c[0], cin, cin);
     
     XOR xor1 [3:0] (p, a, b);
     AND and1 [3:0] (g, a, b);
