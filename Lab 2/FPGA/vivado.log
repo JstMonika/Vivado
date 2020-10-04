@@ -51,4 +51,3 @@ INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1710.016 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
-

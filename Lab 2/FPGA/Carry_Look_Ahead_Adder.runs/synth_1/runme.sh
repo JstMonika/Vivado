@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='E:/Code/Vivado/Lab 2/Carry_Look_Ahead_Adder/Carry_Look_Ahead_Adder.runs/synth_1'
+HD_PWD='E:/Code/Vivado/Lab 2/FPGA/Carry_Look_Ahead_Adder.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

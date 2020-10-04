@@ -24,3 +24,72 @@ close_design
 open_run synth_1 -name synth_1
 open_project {E:/Code/Vivado/Lab 2/FPGA/Carry_Look_Ahead_Adder.xpr}
 update_compile_order -fileset sources_1
+launch_simulation
+source Carry_Look_Ahead_Adder.tcl
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+place_ports {a[3]} R2
+place_ports {a[2]} T1
+place_ports {a[1]} U1
+place_ports {a[0]} W2
+set_property IOSTANDARD LVCMOS33 [get_ports [list {a[3]} {a[2]} {a[1]} {a[0]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {b[3]} {b[2]} {b[1]} {b[0]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {light[6]} {light[5]} {light[4]} {light[3]} {light[2]} {light[1]} {light[0]}]]
+place_ports {b[3]} R3
+place_ports {b[2]} T2
+set_property package_pin "" [get_ports [list  {b[1]}]]
+place_ports {b[1]} T3
+place_ports {b[0]} V2
+place_ports cin W13
+place_ports cout V7
+set_property package_pin "" [get_ports [list  {light[6]}]]
+place_ports {light[0]} W7
+place_ports {light[1]} W6
+place_ports {light[2]} U8
+place_ports {light[3]} V8
+place_ports {light[4]} U5
+place_ports {light[5]} V5
+place_ports {light[6]} U7
+file mkdir {E:/Code/Vivado/Lab 2/FPGA/Carry_Look_Ahead_Adder.srcs/constrs_1/new}
+close [ open {E:/Code/Vivado/Lab 2/FPGA/Carry_Look_Ahead_Adder.srcs/constrs_1/new/display.xdc} w ]
+add_files -fileset constrs_1 {{E:/Code/Vivado/Lab 2/FPGA/Carry_Look_Ahead_Adder.srcs/constrs_1/new/display.xdc}}
+set_property target_constrs_file {E:/Code/Vivado/Lab 2/FPGA/Carry_Look_Ahead_Adder.srcs/constrs_1/new/display.xdc} [current_fileset -constrset]
+save_constraints -force
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+close_design
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+set_property IOSTANDARD LVCMOS33 [get_ports [list {set[3]} {set[2]} {set[1]} {set[0]}]]
+place_ports {set[3]} W4
+place_ports {set[2]} V4
+place_ports {set[1]} U4
+place_ports {set[0]} U2
+save_constraints
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+refresh_design
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+current_project Carry_Look_Ahead_Adder
+close_project
+close_design
+open_run synth_1 -name synth_1
+set_property IOSTANDARD LVCMOS33 [get_ports [list cin]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list cout]]
+save_constraints
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_hw_manager
+connect_hw_server -allow_non_jtag
+connect_hw_server -allow_non_jtag
+connect_hw_server -allow_non_jtag
+close_sim

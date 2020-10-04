@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Mon Oct  5 00:01:43 2020
+# Process ID: 10220
+# Current directory: E:/Code/Vivado/Lab 2/FPGA/Carry_Look_Ahead_Adder.runs/impl_1
+# Command line: vivado.exe -log Carry_Look_Ahead_Adder.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source Carry_Look_Ahead_Adder.tcl -notrace
+# Log file: E:/Code/Vivado/Lab 2/FPGA/Carry_Look_Ahead_Adder.runs/impl_1/Carry_Look_Ahead_Adder.vdi
+# Journal file: E:/Code/Vivado/Lab 2/FPGA/Carry_Look_Ahead_Adder.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source Carry_Look_Ahead_Adder.tcl -notrace

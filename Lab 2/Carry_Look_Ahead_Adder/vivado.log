@@ -60,3 +60,251 @@ INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/Vivado/2020.1/data/ip'.
 update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'E:/Code/Vivado/Lab 2/FPGA/Carry_Look_Ahead_Adder.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Carry_Look_Ahead_Adder' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/Code/Vivado/Lab 2/FPGA/Carry_Look_Ahead_Adder.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj Carry_Look_Ahead_Adder_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/Vivado/Lab 2/FPGA/Carry_Look_Ahead_Adder.srcs/sources_1/imports/Lab 2/Lab2_Team3_Carry_Look_Ahead_Adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Carry_Look_Ahead_Adder
+INFO: [VRFC 10-311] analyzing module AND
+INFO: [VRFC 10-311] analyzing module OR
+INFO: [VRFC 10-311] analyzing module XOR
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-311] analyzing module XNOR
+INFO: [VRFC 10-311] analyzing module MUX
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/Vivado/Lab 2/FPGA/Carry_Look_Ahead_Adder.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/Code/Vivado/Lab 2/FPGA/Carry_Look_Ahead_Adder.sim/sim_1/behav/xsim'
+"xelab -wto ef9d6e4b06564480bbdde5efacf7ab96 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Carry_Look_Ahead_Adder_behav xil_defaultlib.Carry_Look_Ahead_Adder xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: D:/Vivado/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto ef9d6e4b06564480bbdde5efacf7ab96 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Carry_Look_Ahead_Adder_behav xil_defaultlib.Carry_Look_Ahead_Adder xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.AND
+Compiling module xil_defaultlib.OR
+Compiling module xil_defaultlib.XOR
+Compiling module xil_defaultlib.XNOR
+Compiling module xil_defaultlib.MUX
+Compiling module xil_defaultlib.adder
+Compiling module xil_defaultlib.Carry_Look_Ahead_Adder
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot Carry_Look_Ahead_Adder_behav
+
+****** Webtalk v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+  **** IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source E:/Code/Vivado/Lab -notrace
+couldn't read file "E:/Code/Vivado/Lab": permission denied
+INFO: [Common 17-206] Exiting Webtalk at Sun Oct  4 22:14:12 2020...
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 1793.105 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'E:/Code/Vivado/Lab 2/FPGA/Carry_Look_Ahead_Adder.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Carry_Look_Ahead_Adder_behav -key {Behavioral:sim_1:Functional:Carry_Look_Ahead_Adder} -tclbatch {Carry_Look_Ahead_Adder.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+source Carry_Look_Ahead_Adder.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Carry_Look_Ahead_Adder_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:09 ; elapsed = 00:00:16 . Memory (MB): peak = 1806.715 ; gain = 13.609
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory E:/Code/Vivado/Lab 2/FPGA/Carry_Look_Ahead_Adder.runs/synth_1
+
+launch_runs synth_1 -jobs 4
+[Sun Oct  4 22:14:24 2020] Launched synth_1...
+Run output will be captured here: E:/Code/Vivado/Lab 2/FPGA/Carry_Look_Ahead_Adder.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a35tcpg236-1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1829.980 ; gain = 0.000
+INFO: [Project 1-479] Netlist was created with Vivado 2020.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1869.891 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+place_ports {a[3]} R2
+place_ports {a[2]} T1
+place_ports {a[1]} U1
+place_ports {a[0]} W2
+set_property IOSTANDARD LVCMOS33 [get_ports [list {a[3]} {a[2]} {a[1]} {a[0]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {b[3]} {b[2]} {b[1]} {b[0]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {light[6]} {light[5]} {light[4]} {light[3]} {light[2]} {light[1]} {light[0]}]]
+place_ports {b[3]} R3
+place_ports {b[2]} T2
+set_property package_pin "" [get_ports [list  {b[1]}]]
+place_ports {b[1]} T3
+place_ports {b[0]} V2
+place_ports cin W13
+place_ports cout V7
+set_property package_pin "" [get_ports [list  {light[6]}]]
+place_ports {light[0]} W7
+place_ports {light[1]} W6
+place_ports {light[2]} U8
+place_ports {light[3]} V8
+place_ports {light[4]} U5
+place_ports {light[5]} V5
+place_ports {light[6]} U7
+file mkdir {E:/Code/Vivado/Lab 2/FPGA/Carry_Look_Ahead_Adder.srcs/constrs_1/new}
+close [ open {E:/Code/Vivado/Lab 2/FPGA/Carry_Look_Ahead_Adder.srcs/constrs_1/new/display.xdc} w ]
+add_files -fileset constrs_1 {{E:/Code/Vivado/Lab 2/FPGA/Carry_Look_Ahead_Adder.srcs/constrs_1/new/display.xdc}}
+set_property target_constrs_file {E:/Code/Vivado/Lab 2/FPGA/Carry_Look_Ahead_Adder.srcs/constrs_1/new/display.xdc} [current_fileset -constrset]
+save_constraints -force
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory E:/Code/Vivado/Lab 2/FPGA/Carry_Look_Ahead_Adder.runs/synth_1
+
+launch_runs synth_1 -jobs 4
+[Sun Oct  4 22:25:09 2020] Launched synth_1...
+Run output will be captured here: E:/Code/Vivado/Lab 2/FPGA/Carry_Look_Ahead_Adder.runs/synth_1/runme.log
+close_design
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory E:/Code/Vivado/Lab 2/FPGA/Carry_Look_Ahead_Adder.runs/synth_1
+
+launch_runs synth_1 -jobs 4
+[Sun Oct  4 22:27:55 2020] Launched synth_1...
+Run output will be captured here: E:/Code/Vivado/Lab 2/FPGA/Carry_Look_Ahead_Adder.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a35tcpg236-1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1966.113 ; gain = 0.000
+INFO: [Project 1-479] Netlist was created with Vivado 2020.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [E:/Code/Vivado/Lab 2/FPGA/Carry_Look_Ahead_Adder.srcs/constrs_1/new/display.xdc]
+Finished Parsing XDC File [E:/Code/Vivado/Lab 2/FPGA/Carry_Look_Ahead_Adder.srcs/constrs_1/new/display.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1966.113 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+set_property IOSTANDARD LVCMOS33 [get_ports [list {set[3]} {set[2]} {set[1]} {set[0]}]]
+place_ports {set[3]} W4
+place_ports {set[2]} V4
+place_ports {set[1]} U4
+place_ports {set[0]} U2
+save_constraints
+launch_runs impl_1 -jobs 4
+Writing placer database...
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.106 . Memory (MB): peak = 1977.723 ; gain = 0.422
+[Sun Oct  4 22:29:38 2020] Launched impl_1...
+Run output will be captured here: E:/Code/Vivado/Lab 2/FPGA/Carry_Look_Ahead_Adder.runs/impl_1/runme.log
+refresh_design
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [E:/Code/Vivado/Lab 2/FPGA/Carry_Look_Ahead_Adder.srcs/constrs_1/new/display.xdc]
+Finished Parsing XDC File [E:/Code/Vivado/Lab 2/FPGA/Carry_Look_Ahead_Adder.srcs/constrs_1/new/display.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+refresh_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 2017.684 ; gain = 37.285
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory E:/Code/Vivado/Lab 2/FPGA/Carry_Look_Ahead_Adder.runs/synth_1
+
+launch_runs synth_1 -jobs 4
+[Sun Oct  4 22:32:30 2020] Launched synth_1...
+Run output will be captured here: E:/Code/Vivado/Lab 2/FPGA/Carry_Look_Ahead_Adder.runs/synth_1/runme.log
+current_project Carry_Look_Ahead_Adder
+close_project
+close_design
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a35tcpg236-1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2092.684 ; gain = 0.000
+INFO: [Project 1-479] Netlist was created with Vivado 2020.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [E:/Code/Vivado/Lab 2/FPGA/Carry_Look_Ahead_Adder.srcs/constrs_1/new/display.xdc]
+Finished Parsing XDC File [E:/Code/Vivado/Lab 2/FPGA/Carry_Look_Ahead_Adder.srcs/constrs_1/new/display.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2092.684 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+set_property IOSTANDARD LVCMOS33 [get_ports [list cin]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list cout]]
+save_constraints
+launch_runs impl_1 -jobs 4
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.044 . Memory (MB): peak = 2092.684 ; gain = 0.000
+[Sun Oct  4 22:34:43 2020] Launched impl_1...
+Run output will be captured here: E:/Code/Vivado/Lab 2/FPGA/Carry_Look_Ahead_Adder.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sun Oct  4 22:41:19 2020] Launched impl_1...
+Run output will be captured here: E:/Code/Vivado/Lab 2/FPGA/Carry_Look_Ahead_Adder.runs/impl_1/runme.log
+open_hw_manager
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2020.1
+  **** Build date : May 27 2020 at 20:24:38
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+ERROR: [Labtools 27-2220] Launch Error:
+Unable to launch local hw_server executable.
+
+ERROR: [Common 17-39] 'connect_hw_server' failed due to earlier errors.
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2020.1
+  **** Build date : May 27 2020 at 20:24:38
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+ERROR: [Labtools 27-2220] Launch Error:
+Unable to launch local hw_server executable.
+
+ERROR: [Common 17-39] 'connect_hw_server' failed due to earlier errors.
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2020.1
+  **** Build date : May 27 2020 at 20:24:38
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+ERROR: [Labtools 27-2220] Launch Error:
+Unable to launch local hw_server executable.
+
+ERROR: [Common 17-39] 'connect_hw_server' failed due to earlier errors.
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Oct  4 22:45:27 2020...

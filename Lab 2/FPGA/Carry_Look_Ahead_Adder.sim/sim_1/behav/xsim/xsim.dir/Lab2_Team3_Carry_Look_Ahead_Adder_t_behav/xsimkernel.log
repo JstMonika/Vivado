@@ -1,7 +1,4 @@
-Running: xsim.dir/Lab2_Team3_Carry_Look_Ahead_Adder_t_behav/xsimk.exe -simmode gui -wdb Lab2_Team3_Carry_Look_Ahead_Adder_t_behav.wdb -simrunnum 0 -socket 11299
+Running: xsim.dir/Lab2_Team3_Carry_Look_Ahead_Adder_t_behav/xsimk.exe -simmode gui -wdb Lab2_Team3_Carry_Look_Ahead_Adder_t_behav.wdb -simrunnum 0 -socket 4521
 Design successfully loaded
-Design Loading Memory Usage: 6528 KB (Peak: 6528 KB)
-Design Loading CPU Usage: 46 ms
-Simulation completed
-Simulation Memory Usage: 7508 KB (Peak: 7508 KB)
-Simulation CPU Usage: 77 ms
+Design Loading Memory Usage: 6040 KB (Peak: 6040 KB)
+Design Loading CPU Usage: 15 ms

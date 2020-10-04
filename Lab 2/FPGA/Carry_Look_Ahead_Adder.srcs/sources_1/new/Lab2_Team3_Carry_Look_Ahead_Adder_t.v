@@ -24,13 +24,14 @@ module Lab2_Team3_Carry_Look_Ahead_Adder_t();
     
     reg [3:0] a, b;
     reg cin;
-    wire [4:0] out;
+    wire [7:0] out;
     reg [4:0] test;
     wire correct;
+    wire [2:0] set;
     
     assign correct = (test == out);
     
-    Carry_Look_Ahead_Adder CLA(.a(a), .b(b), .cin(cin), .cout(out[4]), .sum(out[3:0]));
+    Carry_Look_Ahead_Adder CLA(.a(a), .b(b), .cin(cin), .cout(out[7]), .light(out[6:0]), .set(set));
     
     initial begin
         a = 4'b0;
