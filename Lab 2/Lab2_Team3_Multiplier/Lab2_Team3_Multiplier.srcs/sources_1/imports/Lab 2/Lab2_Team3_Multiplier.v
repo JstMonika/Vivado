@@ -82,9 +82,16 @@ module XNOR(a,b,cout);
 	
     wire aandb,notab,nota,notb;
 	
-    not n1(nota,a),n2(notb,b);
-    and a1(aandb,a,b),a2(notab,nota,notb);
-    or o1(cout,aandb,notab);
+    nor n1(nota,a,a),n2(notb,b,b);
+    
+    wire up, down;
+    
+    nor a1(aandb,nota,notb);
+    nor a2(notab,a,b);
+    
+    wire ncout;
+    nor o1(ncout,aandb,notab);
+    nor o2(cout, ncout, ncout);
 	
 endmodule
 
@@ -95,9 +102,19 @@ module MUX(a,b,sel,f);
 
     wire nots,mix1,mix2;
 
-    not n1(nots,sel);
-    and a1(mix1,a,sel),a2(mix2,b,nots);
-    or o1(f,mix1,mix2);
+    nor n1(nots, sel, sel);
+    
+    wire na, nb;
+    
+    nor nor1(na, a, a);
+    nor nor2(nb, b, b);
+    
+    nor nor3(mix1, na, nots);
+    nor nor4(mix2, nb, sel);
+    
+    wire midf;
+    nor o1(midf,mix1,mix2);
+    nor o2(f, midf, midf);
 
 endmodule
 

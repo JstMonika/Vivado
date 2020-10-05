@@ -108,7 +108,7 @@ wire ncout;
         
         nand nand35(gfour[0], nsum[1], nsum[2], nsum[3]);
         nand nand36(gfour[1], sum[2], sum[3], nsum[0], nsum[1]);
-        nand nand37(gfour[2], sum[1], sum[2], nsum[3], nsum[0]);
+        nand nand37(gfour[2], sum[1], sum[2], nsum[3], sum[0]);
         
         nand nng(light[6], gfour[0], gfour[1], gfour[2]);
     
@@ -176,9 +176,9 @@ module XNOR(a,b,cout);
 	
     wire aandb,notab,nota,notb;
 	
-    not n1(nota,a),n2(notb,b);
-    and a1(aandb,a,b),a2(notab,nota,notb);
-    or o1(cout,aandb,notab);
+    nand n1(nota,a,a),n2(notb,b,b);
+    AND a1(aandb,a,b),a2(notab,nota,notb);
+    OR o1(cout,aandb,notab);
 	
 endmodule
 
@@ -189,9 +189,9 @@ module MUX(a,b,sel,f);
 
     wire nots,mix1,mix2;
 
-    not n1(nots,sel);
-    and a1(mix1,a,sel),a2(mix2,b,nots);
-    or o1(f,mix1,mix2);
+    nand n1(nots,sel,sel);
+    AND a1(mix1,a,sel),a2(mix2,b,nots);
+    OR o1(f,mix1,mix2);
 
 endmodule
 
