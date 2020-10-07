@@ -76,6 +76,16 @@ module adder(a,b,cin,cout,sum);
 
 endmodule
 
+module XOR(c, a, b);
+    input a, b;
+    output c;
+    
+    wire mid;
+    XNOR xnor1(a, b, mid);
+    nor nor1(c, mid, mid);
+
+endmodule
+
 module XNOR(a,b,cout);
     input a,b;
     output cout;
@@ -124,14 +134,5 @@ module zero(out, in);
     output out;
     
     XOR xor1(out, in, in);
-
-endmodule
-
-module one(out, in);
-
-    input in;
-    output out;
-    
-    XNOR xnor1(in, in, out);
 
 endmodule

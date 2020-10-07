@@ -1,7 +1,7 @@
-Running: xsim.dir/Lab2_Team3_Multiplier_t_behav/xsimk.exe -simmode gui -wdb Lab2_Team3_Multiplier_t_behav.wdb -simrunnum 0 -socket 5427
+Running: xsim.dir/Lab2_Team3_Multiplier_t_behav/xsimk.exe -simmode gui -wdb Lab2_Team3_Multiplier_t_behav.wdb -simrunnum 0 -socket 7894
 Design successfully loaded
-Design Loading Memory Usage: 6560 KB (Peak: 6560 KB)
-Design Loading CPU Usage: 46 ms
+Design Loading Memory Usage: 6596 KB (Peak: 6596 KB)
+Design Loading CPU Usage: 15 ms
 Simulation completed
-Simulation Memory Usage: 7716 KB (Peak: 7716 KB)
-Simulation CPU Usage: 61 ms
+Simulation Memory Usage: 7796 KB (Peak: 7796 KB)
+Simulation CPU Usage: 30 ms

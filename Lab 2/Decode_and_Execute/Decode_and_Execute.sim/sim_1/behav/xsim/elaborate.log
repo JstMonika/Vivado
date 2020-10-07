@@ -4,18 +4,6 @@ Running: D:/Vivado/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 0e97c0c4b2
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'c' [E:/Code/Vivado/Lab 2/Decode_and_Execute/Decode_and_Execute.srcs/sources_1/imports/Lab 2/Lab2_Team3_Decode_and_Execute.v:43]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'c' [E:/Code/Vivado/Lab 2/Decode_and_Execute/Decode_and_Execute.srcs/sources_1/imports/Lab 2/Lab2_Team3_Decode_and_Execute.v:44]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'c' [E:/Code/Vivado/Lab 2/Decode_and_Execute/Decode_and_Execute.srcs/sources_1/imports/Lab 2/Lab2_Team3_Decode_and_Execute.v:45]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'c' [E:/Code/Vivado/Lab 2/Decode_and_Execute/Decode_and_Execute.srcs/sources_1/imports/Lab 2/Lab2_Team3_Decode_and_Execute.v:46]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'c' [E:/Code/Vivado/Lab 2/Decode_and_Execute/Decode_and_Execute.srcs/sources_1/imports/Lab 2/Lab2_Team3_Decode_and_Execute.v:55]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'c' [E:/Code/Vivado/Lab 2/Decode_and_Execute/Decode_and_Execute.srcs/sources_1/imports/Lab 2/Lab2_Team3_Decode_and_Execute.v:56]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'c' [E:/Code/Vivado/Lab 2/Decode_and_Execute/Decode_and_Execute.srcs/sources_1/imports/Lab 2/Lab2_Team3_Decode_and_Execute.v:57]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'c' [E:/Code/Vivado/Lab 2/Decode_and_Execute/Decode_and_Execute.srcs/sources_1/imports/Lab 2/Lab2_Team3_Decode_and_Execute.v:58]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'c' [E:/Code/Vivado/Lab 2/Decode_and_Execute/Decode_and_Execute.srcs/sources_1/imports/Lab 2/Lab2_Team3_Decode_and_Execute.v:31]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'c' [E:/Code/Vivado/Lab 2/Decode_and_Execute/Decode_and_Execute.srcs/sources_1/imports/Lab 2/Lab2_Team3_Decode_and_Execute.v:32]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'c' [E:/Code/Vivado/Lab 2/Decode_and_Execute/Decode_and_Execute.srcs/sources_1/imports/Lab 2/Lab2_Team3_Decode_and_Execute.v:33]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'c' [E:/Code/Vivado/Lab 2/Decode_and_Execute/Decode_and_Execute.srcs/sources_1/imports/Lab 2/Lab2_Team3_Decode_and_Execute.v:34]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
@@ -23,12 +11,15 @@ Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.MUX
 Compiling module xil_defaultlib.XNOR
 Compiling module xil_defaultlib.XOR
+Compiling module xil_defaultlib.zero
+Compiling module xil_defaultlib.one
 Compiling module xil_defaultlib.adder
 Compiling module xil_defaultlib.f_bit_adder
 Compiling module xil_defaultlib.NAND
-Compiling module xil_defaultlib.AND
 Compiling module xil_defaultlib.div
+Compiling module xil_defaultlib.oAND
 Compiling module xil_defaultlib.mul
+Compiling module xil_defaultlib.AND
 Compiling module xil_defaultlib.Multiplier
 Compiling module xil_defaultlib.Decode_and_Execute_default
 Compiling module xil_defaultlib.Lab2_Team3_Decode_and_Execute_t

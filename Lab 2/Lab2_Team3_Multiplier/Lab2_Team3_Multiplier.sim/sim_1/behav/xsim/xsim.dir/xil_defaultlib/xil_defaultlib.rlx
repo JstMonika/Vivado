@@ -3,5 +3,5 @@
 May 27 2020
 20:09:33
 E:/Code/Vivado/Lab 2/Lab2_Team3_Multiplier/Lab2_Team3_Multiplier.sim/sim_1/behav/xsim/glbl.v,1590624368,verilog,,,,glbl,,,,,,,,
-E:/Code/Vivado/Lab 2/Lab2_Team3_Multiplier/Lab2_Team3_Multiplier.srcs/sources_1/imports/Lab 2/Lab2_Team3_Multiplier.v,1601654252,verilog,,E:/Code/Vivado/Lab 2/Lab2_Team3_Multiplier/Lab2_Team3_Multiplier.srcs/sources_1/new/Lab2_Team3_Multiplier_t.v,,AND;MUX;Multiplier;XNOR;adder,,,,,,,,
+E:/Code/Vivado/Lab 2/Lab2_Team3_Multiplier/Lab2_Team3_Multiplier.srcs/sources_1/imports/Lab 2/Lab2_Team3_Multiplier.v,1602081334,verilog,,E:/Code/Vivado/Lab 2/Lab2_Team3_Multiplier/Lab2_Team3_Multiplier.srcs/sources_1/new/Lab2_Team3_Multiplier_t.v,,AND;MUX;Multiplier;XNOR;XOR;adder;zero,,,,,,,,
 E:/Code/Vivado/Lab 2/Lab2_Team3_Multiplier/Lab2_Team3_Multiplier.srcs/sources_1/new/Lab2_Team3_Multiplier_t.v,1601654288,verilog,,,,Lab2_Team3_Multiplier_t,,,,,,,,

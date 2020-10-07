@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date         : Mon Oct  5 00:48:47 2020
+| Date         : Wed Oct  7 23:21:05 2020
 | Host         : Ori-PC running 64-bit major release  (build 9200)
 | Command      : report_clock_utilization -file Carry_Look_Ahead_Adder_clock_utilization_routed.rpt
 | Design       : Carry_Look_Ahead_Adder

@@ -2,3 +2,6 @@ Running: xsim.dir/Lab2_Team3_Carry_Look_Ahead_Adder_t_behav/xsimk.exe -simmode g
 Design successfully loaded
 Design Loading Memory Usage: 6040 KB (Peak: 6040 KB)
 Design Loading CPU Usage: 15 ms
+Simulation completed
+Simulation Memory Usage: 7192 KB (Peak: 7192 KB)
+Simulation CPU Usage: 46 ms

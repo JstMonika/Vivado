@@ -18,10 +18,10 @@ module Decode_and_Execute (op_code, rs, rt, rd);
     
     wire z, o;
     zero z1(z, rs[0]);
-    onr o1(o, rs[0]);
+    one o1(o, rs[0]);
     
     f_bit_adder fba1(rs, rt, dd, op_code[0]);
-    f_bit_adder fba2(rs, {3{z}, o}, dud, z);
+    f_bit_adder fba2(rs, {z, z, z, o}, dud, z);
     
     nor nor1 [3:0] (duu, rs, rt);
     NAND nand1 [3:0] (udd, rs, rt);
@@ -32,20 +32,37 @@ module Decode_and_Execute (op_code, rs, rt, rd);
     mul mul1(uud, rs);
     Multiplier mul2(rs, rt, result);
     
-    AND and1(uuu[0], result[0], result[0]);
-    AND and2(uuu[1], result[1], result[1]);
-    AND and3(uuu[2], result[2], result[2]);
-    AND and4(uuu[3], result[3], result[3]);
+    oAND and1(uuu[0], result[0], result[0]);
+    oAND and2(uuu[1], result[1], result[1]);
+    oAND and3(uuu[2], result[2], result[2]);
+    oAND and4(uuu[3], result[3], result[3]);
     
 endmodule
+
+module oAND(c, a, b);
+    input a, b;
+    output c;
+    
+    wire na, nb;
+    nor nor1(na, a, a);
+    nor nor2(nb, b, b);
+    
+    nor nor3(c, na, nb);
+    
+endmodule
+
 
 module div(out, in);
 
     input [3:0] in;
     output [3:0] out;
     
-    AND and1(out[0], in[2], in[2]);
-    AND and2(out[1], in[3], in[3]);
+    wire in2, in3;
+    nor nor1(in2, in[2], in[2]);
+    nor nor2(in3, in[3], in[3]);
+    
+    nor nor3(out[0], in2, in2);
+    nor nor4(out[1], in3, in3);
     XOR and3(out[2], in[0], in[0]);
     XOR and4(out[3], in[0], in[0]);
     
@@ -57,9 +74,9 @@ module mul(out, in);
     output [3:0] out;
     
     XOR and1(out[0], in[0], in[0]);
-    AND and2(out[1], in[0], in[0]);
-    AND and3(out[2], in[1], in[1]);
-    AND and4(out[3], in[2], in[2]);
+    oAND and2(out[1], in[0], in[0]);
+    oAND and3(out[2], in[1], in[1]);
+    oAND and4(out[3], in[2], in[2]);
     
 endmodule
 
