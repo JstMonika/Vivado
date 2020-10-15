@@ -20,5 +20,22 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module clock(clock, digit, dot, );
+module clock(clk, digit, dot, );
+    input clk;
+    
+    wire clk_240Hz;
+    
+    reg [3:0] w;
+    
+    wire [3:0] next = {w[2:0], w[3]};
+    
+    reg a;
+    wire next, en;
+    always @(posedge clk) begin
+        if (en)
+            a <= next;
+        else
+            a <= a;
+    end
+    
 endmodule
