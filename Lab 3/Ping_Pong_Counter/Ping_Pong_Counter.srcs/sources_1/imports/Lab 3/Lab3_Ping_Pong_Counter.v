@@ -6,7 +6,6 @@ input enable;
 output reg direction;
 output reg [4-1:0] out;
 
-
 always @(posedge clk) begin
     
     if (!rst_n) begin
