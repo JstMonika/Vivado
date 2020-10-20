@@ -1,0 +1,10 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../Clock_Divider.srcs/sources_1/imports/Lab 3/Lab3_Clock_Divider.v" \
+"../../../../Clock_Divider.srcs/sources_1/imports/Lab 3/Clock_Divider_t.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

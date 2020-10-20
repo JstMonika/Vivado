@@ -1,0 +1,1 @@
+-wto "82bf5d855dba4ddba450fdffd549ab31" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "unisims_ver" -L "unimacro_ver" -L "secureip" --snapshot "Lab3_Team3_Parameterized_Ping_Pong_Counter_t_behav" "xil_defaultlib.Lab3_Team3_Parameterized_Ping_Pong_Counter_t" "xil_defaultlib.glbl" -log "elaborate.log" 

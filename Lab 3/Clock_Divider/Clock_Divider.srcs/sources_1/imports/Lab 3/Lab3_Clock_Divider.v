@@ -18,25 +18,25 @@ wire [2:0] next2, next3, next4, next8;
 
 always @(posedge clk) begin
     // 1/2
-    if (count2 === 3'd1)
+    if (count2 === 3'd1 && rst_n)
         clk1_2 <= 1'b1;
     else
         clk1_2 <= 1'b0;
         
     // 1/3
-    if (count3 === 3'd2)
+    if (count3 === 3'd2 && rst_n)
         clk1_3 <= 1'b1;
     else
         clk1_3 <= 1'b0;
     
     // 1/4
-    if (count4 === 3'd3)
+    if (count4 === 3'd3 && rst_n)
         clk1_4 <= 1'b1;
     else
         clk1_4 <= 1'b0;
     
     // 1/8
-    if (count8 === 3'd7)
+    if (count8 === 3'd7 && rst_n)
         clk1_8 <= 1'b1;
     else
         clk1_8 <= 1'b0;
@@ -44,18 +44,18 @@ end
 
 always @(posedge clk) begin
     
-    if (!rst) begin
-        clk1_2 <= 1'b0;
-        clk1_3 <= 1'b0;
-        clk1_4 <= 1'b0;
-        clk1_8 <= 1'b0;
+    if (!rst_n) begin
+        count2 <= 1;
+        count3 <= 1;
+        count4 <= 1;
+        count8 <= 1;
     end
     
     else begin
-       clk1_2 <= (clk1_2 + 1) % 2;
-       clk1_3 <= (clk1_3 + 1) % 3;
-       clk1_4 <= (clk1_4 + 1) % 4;
-       clk1_8 <= (clk1_8 + 1) % 8;
+       count2 <= (count2 == 1 ? 0 : count2 + 1);
+       count3 <= (count3 == 2 ? 0 : count3 + 1);
+       count4 <= (count4 == 3 ? 0 : count4 + 1);
+       count8 <= (count8 == 7 ? 0 : count8 + 1);
     end
 end
 
