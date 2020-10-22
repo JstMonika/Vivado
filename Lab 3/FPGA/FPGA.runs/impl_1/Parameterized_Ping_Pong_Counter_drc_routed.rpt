@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date         : Tue Oct 20 12:05:30 2020
+| Date         : Thu Oct 22 05:06:43 2020
 | Host         : Ori-PC running 64-bit major release  (build 9200)
 | Command      : report_drc -file Parameterized_Ping_Pong_Counter_drc_routed.rpt -pb Parameterized_Ping_Pong_Counter_drc_routed.pb -rpx Parameterized_Ping_Pong_Counter_drc_routed.rpx
 | Design       : Parameterized_Ping_Pong_Counter
@@ -24,12 +24,14 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 1
-+----------+----------+-----------------------------------------------------+------------+
-| Rule     | Severity | Description                                         | Violations |
-+----------+----------+-----------------------------------------------------+------------+
-| CFGBVS-1 | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1          |
-+----------+----------+-----------------------------------------------------+------------+
+             Violations found: 6
++-------------+----------+-------------------------------------------------------------+------------+
+| Rule        | Severity | Description                                                 | Violations |
++-------------+----------+-------------------------------------------------------------+------------+
+| CFGBVS-1    | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties         | 1          |
+| PDRC-153    | Warning  | Gated clock check                                           | 3          |
+| PLHOLDVIO-2 | Warning  | Non-Optimal connections which could lead to hold violations | 2          |
++-------------+----------+-------------------------------------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
@@ -44,6 +46,36 @@ Neither the CFGBVS nor CONFIG_VOLTAGE voltage property is set in the current_des
  #where value2 is the voltage provided to configuration bank 0
 
 Refer to the device configuration user guide for more information.
+Related violations: <none>
+
+PDRC-153#1 Warning
+Gated clock check  
+Net Clock/CLK is a gated clock net sourced by a combinational pin Clock/display[6]_i_1/O, cell Clock/display[6]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#2 Warning
+Gated clock check  
+Net Clock2/count_reg[19]_0 is a gated clock net sourced by a combinational pin Clock2/delay_i_1/O, cell Clock2/delay_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#3 Warning
+Gated clock check  
+Net next_display_reg[6]_i_2_n_0 is a gated clock net sourced by a combinational pin next_display_reg[6]_i_2/O, cell next_display_reg[6]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PLHOLDVIO-2#1 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT Clock/display[6]_i_1 is driving clock pin of 11 cells. This could lead to large hold time violations. Involved cells are:
+display_reg[0], display_reg[1], display_reg[2], display_reg[3],
+display_reg[4], display_reg[5], display_reg[6], which_reg[0], which_reg[1],
+which_reg[2], which_reg[3]
+Related violations: <none>
+
+PLHOLDVIO-2#2 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT Clock2/delay_i_1 is driving clock pin of 7 cells. This could lead to large hold time violations. Involved cells are:
+direction_reg, do2/delay_reg, do2/sout_reg, out_reg[0], out_reg[1],
+out_reg[2], out_reg[3]
 Related violations: <none>
 
 

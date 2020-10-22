@@ -38,11 +38,19 @@ module tb();
         max = 15;
         min = 0;
         f = 0;
+        
+        @(negedge clk)  rst = 0;
         #10
-        rst = 0;
-        #10
-        rst = 1;
+        @(negedge clk)  rst = 1;
         #10
         en = 1;
+        
+        #5
+        @(negedge clk) f = 1;
+        #300
+        @(negedge clk) f = 0;
+        #300
+        
+        $finish;
     end
 endmodule

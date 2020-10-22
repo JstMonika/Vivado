@@ -9,6 +9,9 @@ input [4-1:0] min;
 output reg direction;
 output reg [4-1:0] out;
 
+reg [3:0] next_out;
+reg next_direction;
+
 always @(posedge clk) begin
     
     if (!rst_n) begin
@@ -16,40 +19,29 @@ always @(posedge clk) begin
         direction <= 1'b1;
     end
     else begin
-        if (enable && out <= max && out >= min && max != min) begin
-            if (direction ^ flip) begin
-                if (max == out) begin
-                    out <= out - 1'b1;
-                    direction <= ~direction;
-                end
-                else begin
-                    out = out + 1'b1;
-                    
-                    if (flip)
-                        direction <= ~direction;
-                    else
-                        direction <= direction;
-                end
-            end
-            else begin
-                if (min == out) begin
-                    out <= out + 1'b1;
-                    direction <= ~direction;
-                end
-                else
-                    out <= out - 1'b1;
-                    
-                    if (flip)
-                        direction <= ~direction;
-                    else
-                        direction <= direction;
-            end
-        end
-        else begin
-            out <= out;
-            direction <= direction;
-        end
+        
+        out <= next_out;
+        direction <= next_direction;
+        
     end
 end
 
+always @(*) begin
+    
+    if (enable && out >= min && out <= max && min != max) begin
+        if ((direction && (out == max)) || (!direction && (out == min)) || flip)
+            next_direction = ~direction;
+        else
+            next_direction = direction;
+    end
+    else
+        next_direction = direction;
+        
+        
+    if (enable && out >= min && out <= max && min != max) begin
+        next_out = (next_direction ? out + 1 : out - 1);
+    end
+    else
+        next_out = out;
+end
 endmodule

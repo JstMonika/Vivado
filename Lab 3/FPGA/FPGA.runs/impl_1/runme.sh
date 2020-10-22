@@ -41,7 +41,7 @@ EAStep()
 }
 
 # pre-commands:
-/bin/touch .write_bitstream.begin.rst
+/bin/touch .init_design.begin.rst
 EAStep vivado -log Parameterized_Ping_Pong_Counter.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source Parameterized_Ping_Pong_Counter.tcl -notrace
 
 

@@ -1,124 +1,182 @@
 `timescale 1ns/1ps 
 
-module Parameterized_Ping_Pong_Counter (clk, rst_n, enable, flip, max, min, display, decoder);
+module Parameterized_Ping_Pong_Counter (clk, rst_n, enable, flip, max, min, display, which);
 input clk, rst_n;
 input enable;
 input flip;
 input [4-1:0] max;
 input [4-1:0] min;
 
-output [3:0] decoder;
-reg [1:0] count = 0;
-output [7:0] display;
+wire RESET, RST_N;
+wire FLIP;
+wire disCLK;
+wire chaCLK;
 
-assign display[0] = count == 0 ? !(out < 10) :
-                    count == 1 ? (out == 1) | (out == 4) : ~direction;
-assign display[1] = count == 0 ? !(out < 10) :
-                    count == 1 ? (out == 1) | (out == 2) | (out == 3) | (out == 7) : ~direction;
-assign display[2] = count == 0 ? 1'b0 :
-                    count == 1 ? (out == 5) | (out == 6) : ~direction;
-assign display[3] = count == 0 ? 1'b1 :
-                    count == 1 ? (out == 1) | (out == 7) | (out == 0) : 1'b1;
-assign display[4] = count == 0 ? !(out < 10) :
-                    count == 1 ? (!((out == 2) | (out == 6) | (out == 8) | (out == 0))) : direction;
-assign display[5] = count == 0 ? 1'b0 :
-                    count == 1 ? (out == 2) : direction;
-assign display[6] = count == 0 ? !(out < 10) :
-                    count == 1 ? (out == 1) | (out == 4) | (out == 7) : direction;
-assign display[7] = 1'b1;
+output reg [3:0] which;
+output reg [7:0] display;
+reg [3:0] next_which;
+reg [7:0] next_display;
+reg direction;
+reg next_direction;
+reg [4-1:0] out;
+reg [3:0] next_out;
 
-assign decoder = count == 0 ? 7 :
-                 count == 1 ? 11 :
-                 count == 2 ? 13 : 14;
+de_op do1(clk, clk, rst_n, RESET);
+de_op do2(clk, chaCLK, flip, FLIP);
+not not1(RST_N, RESET);
+dis_clk Clock(clk, RST_N, disCLK);
+change_clk Clock2(clk, RST_N, chaCLK);
 
-reg direction = 1;
-reg [4-1:0] out = 0;
-
-reg [4:0] flipDFF, rstDFF;
-wire dflip, drst_n;
-reg delay_flip, delay_rst, opul_flip, opul_rst;
-
-always @(posedge clk) begin
-    flipDFF[4:0] <= {flip, flipDFF[4:1]};
-    rstDFF[4:0] <= {rst_n, rstDFF[4:1]};
-    
-    delay_flip <= dflip;
-    delay_rst <= drst_n;
-    
-    opul_flip <= dflip & (!delay_flip);
-    opul_rst <= (!(drst_n & (!delay_rst)));
-    
-    // ---------------------
-    count <= (count == 3 ? 0 : count + 1);
+always @(posedge disCLK) begin
+    if (!RST_N) begin
+        which <= 4'b0111;
+        display <= next_display;
+    end
+    else begin
+        which <= next_which;
+        display <= next_display;
+    end
 end
 
-assign dflip = &flipDFF;
-assign drst_n = &rstDFF;
-
-wire sclk;
-sec_clk s1(.clk(clk), .out(sclk));
-
-always @(posedge sclk) begin
+always @(posedge chaCLK) begin
     
-    if (!opul_rst) begin
+    if (!RST_N) begin
         out <= min;
         direction <= 1'b1;
     end
     else begin
-        if (enable && out <= max && out >= min && max != min) begin
-            if (direction ^ opul_flip) begin
-                if (max == out) begin
-                    out <= out - 1'b1;
-                    direction <= ~direction;
-                end
-                else begin
-                    out = out + 1'b1;
-                    
-                    if (opul_flip)
-                        direction <= ~direction;
-                    else
-                        direction <= direction;
-                end
-            end
-            else begin
-                if (min == out) begin
-                    out <= out + 1'b1;
-                    direction <= ~direction;
-                end
-                else begin
-                    out <= out - 1'b1;
-                    
-                    if (opul_flip)
-                        direction <= ~direction;
-                    else
-                        direction <= direction;
-                end
-            end
-        end
-        else begin
-            out <= out;
-            direction <= direction;
-        end
+        out <= next_out;
+        direction <= next_direction;
     end
+end
+
+always @(*) begin
+    
+    if (enable && out >= min && out <= max && min != max) begin
+        if ((direction && (out == max)) || (!direction && (out == min)) || FLIP)
+            next_direction = ~direction;
+        else
+            next_direction = direction;
+    end
+    else
+        next_direction = direction;
+        
+        
+    if (enable && out >= min && out <= max && min != max) begin
+        next_out = (next_direction ? out + 1 : out - 1);
+    end
+    else
+        next_out = out;
+end
+
+always @(*) begin
+    next_which = {which[0], which[3:1]};
+    
+    case (next_which)
+        4'b0111: begin
+            next_display[0] = (out < 10) ? 0 : 1;
+            next_display[1] = (out < 10) ? 0 : 1;
+            next_display[2] = 1'b0;
+            next_display[3] = 1'b1;
+            next_display[4] = (out < 10) ? 0 : 1;
+            next_display[5] = 1'b0;
+            next_display[6] = (out < 10) ? 0 : 1;
+            next_display[7] = 1'b1;
+        end
+        4'b1011: begin
+            next_display[0] = (out == 1) || (out == 11) || (out == 4) || (out == 14);
+            next_display[1] = (out == 1) || (out == 11) || (out == 2) || (out == 12) || (out == 3) || (out == 13) || (out == 7);
+            next_display[2] = (out == 5) || (out == 6) || (out == 15);
+            next_display[3] = (out == 0) || (out == 10) || (out == 1) || (out == 11) || (out == 7);
+            next_display[4] = (!((out == 0) || (out == 10) || (out == 2) || (out == 12) || (out == 6) || (out == 8)));
+            next_display[5] = (out == 2) || (out == 12);
+            next_display[6] = (out == 1) || (out == 11) || (out == 4) || (out == 14) || (out == 7);
+            next_display[7] = 1'b1;
+        end
+        4'b1101: begin
+            next_display[0] = ~direction;
+            next_display[1] = ~direction;
+            next_display[2] = ~direction;
+            next_display[3] = 1'b1;
+            next_display[4] = direction;
+            next_display[5] = direction;
+            next_display[6] = direction;
+            next_display[7] = 1'b1;
+        end
+        4'b1110: begin
+            next_display[0] = ~direction;
+            next_display[1] = ~direction;
+            next_display[2] = ~direction;
+            next_display[3] = 1'b1;
+            next_display[4] = direction;
+            next_display[5] = direction;
+            next_display[6] = direction;
+            next_display[7] = 1'b1; 
+        end
+    endcase
 end
 
 endmodule
 
-module sec_clk(clk, out);
+module dis_clk(clk, rst_n, out);
+    
     input clk;
-    output reg out = 0;
+    input rst_n;
+    output out;
     
-    reg [18:0] counter = 0;
+    reg [25:0] count;
     
-    always @(posedge clk) begin
-        if (counter == 50000) begin
-            counter <= 0;
-            out <= ~out;
-        end
-        else begin
-            counter = counter + 1;
-            out <= out;
-        end
+    assign out = (count == 0);
+    
+    always @(posedge clk)
+        if (!rst_n)
+            count <= 0;
+        else
+            // count <= (count >= 2 ? 0 : count + 1);
+            count <= (count >= 270000 ? 0 : count + 1);
+    
+endmodule
+
+module change_clk(clk, rst_n, out);
+    
+    input clk;
+    input rst_n;
+    output out;
+    
+    reg [25:0] count;
+    
+    assign out = (count == 0);
+    
+    always @(posedge clk)
+        if (!rst_n)
+            count <= 0;
+        else
+            // count <= (count == 5 ? 0 : count + 1);
+            count <= (count == 100000000 ? 0 : count + 1);
+    
+endmodule
+
+module de_op(declk, opclk, sin, sout);
+    
+    input declk;
+    input opclk;
+    input sin;
+    output reg sout;
+    
+    reg [4:0] dff;
+    
+    wire debounce;
+    assign debounce = &dff;
+    
+    reg delay;
+    
+    always @(negedge declk) begin
+        dff[4:0] <= {sin, dff[4:1]};
+    end
+    
+    always @(negedge opclk) begin
+        delay <= debounce;
+        sout <= (debounce && (~delay));
     end
     
 endmodule
