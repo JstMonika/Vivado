@@ -2,8 +2,8 @@
 # Webtalk v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Mon Oct 19 16:19:28 2020
-# Process ID: 18956
+# Start of session at: Thu Oct 22 19:56:25 2020
+# Process ID: 20016
 # Current directory: E:/Code/Vivado/Lab 3/Memory/Memory.sim/sim_1/behav/xsim
 # Command line: wbtcv.exe -mode batch -source E:/Code/Vivado/Lab 3/Memory/Memory.sim/sim_1/behav/xsim/xsim.dir/Lab3_Team3_Memory_t_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: E:/Code/Vivado/Lab 3/Memory/Memory.sim/sim_1/behav/xsim/webtalk.log
@@ -11,4 +11,4 @@
 #-----------------------------------------------------------
 source E:/Code/Vivado/Lab -notrace
 couldn't read file "E:/Code/Vivado/Lab": permission denied
-INFO: [Common 17-206] Exiting Webtalk at Mon Oct 19 16:19:28 2020...
+INFO: [Common 17-206] Exiting Webtalk at Thu Oct 22 19:56:25 2020...
