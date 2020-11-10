@@ -1,0 +1,7 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/Vivado/Lab 3/FPGA/FPGA.srcs/sources_1/imports/Lab 3/Lab3_TeamX_Parameterized_Ping_Pong_Counter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Parameterized_Ping_Pong_Counter
+INFO: [VRFC 10-311] analyzing module dis_clk
+INFO: [VRFC 10-311] analyzing module change_clk
+INFO: [VRFC 10-311] analyzing module de_op
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/Vivado/Lab 3/FPGA/FPGA.srcs/sources_1/new/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb

@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/Vivado/Lab 4/Lab4_Team3_Greatest_Common_Divisor/Lab4_Team3_Greatest_Common_Divisor.srcs/sources_1/imports/Lab 4/Lab4_Team3_Greatest_Common_Divisor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Greatest_Common_Divisor
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/Vivado/Lab 4/Lab4_Team3_Greatest_Common_Divisor/Lab4_Team3_Greatest_Common_Divisor.srcs/sources_1/new/Lab4_Team3_Greatest_Common_Divisor_t.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Lab4_Team3_Greatest_Common_Divisor_t

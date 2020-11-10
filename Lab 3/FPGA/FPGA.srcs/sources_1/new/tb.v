@@ -45,7 +45,10 @@ module tb();
         #10
         en = 1;
         
-        #5
+        @(negedge clk)  rst = 0;
+        #10
+        @(negedge clk)  rst = 1;
+        #15
         @(negedge clk) f = 1;
         #300
         @(negedge clk) f = 0;

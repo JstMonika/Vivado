@@ -133,7 +133,7 @@ module dis_clk(clk, rst_n, out);
             count <= 0;
         else
             // count <= (count >= 2 ? 0 : count + 1);
-            count <= (count >= 270000 ? 0 : count + 1);
+            count <= (count >= 2 ? 0 : count + 1);
     
 endmodule
 
@@ -152,7 +152,7 @@ module change_clk(clk, rst_n, out);
             count <= 0;
         else
             // count <= (count == 5 ? 0 : count + 1);
-            count <= (count == 100000000 ? 0 : count + 1);
+            count <= (count == 10 ? 0 : count + 1);
     
 endmodule
 
