@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date             : Tue Nov 10 14:07:05 2020
+| Date             : Wed Nov 11 15:54:32 2020
 | Host             : Ori-PC running 64-bit major release  (build 9200)
 | Command          : report_power -file Lab4_Team3_Stopwatch_fpga_power_routed.rpt -pb Lab4_Team3_Stopwatch_fpga_power_summary_routed.pb -rpx Lab4_Team3_Stopwatch_fpga_power_routed.rpx
 | Design           : Lab4_Team3_Stopwatch_fpga
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 3.573        |
+| Total On-Chip Power (W)  | 0.566        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 3.491        |
-| Device Static (W)        | 0.082        |
+| Dynamic (W)              | 0.494        |
+| Device Static (W)        | 0.073        |
 | Effective TJA (C/W)      | 5.0          |
-| Max Ambient (C)          | 67.1         |
-| Junction Temperature (C) | 42.9         |
+| Max Ambient (C)          | 82.2         |
+| Junction Temperature (C) | 27.8         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,16 +52,16 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.192 |      317 |       --- |             --- |
-|   LUT as Logic |     0.122 |       84 |     20800 |            0.40 |
-|   Register     |     0.036 |      185 |     41600 |            0.44 |
-|   CARRY4       |     0.029 |       16 |      8150 |            0.20 |
+| Slice Logic    |     0.175 |      324 |       --- |             --- |
+|   LUT as Logic |     0.101 |       89 |     20800 |            0.43 |
+|   Register     |     0.038 |      185 |     41600 |            0.44 |
+|   CARRY4       |     0.030 |       16 |      8150 |            0.20 |
 |   BUFG         |     0.006 |        1 |        32 |            3.13 |
-|   Others       |     0.000 |       16 |       --- |             --- |
-| Signals        |     0.372 |      284 |       --- |             --- |
-| I/O            |     2.927 |       15 |       106 |           14.15 |
-| Static Power   |     0.082 |          |           |                 |
-| Total          |     3.573 |          |           |                 |
+|   Others       |     0.000 |       13 |       --- |             --- |
+| Signals        |     0.307 |      292 |       --- |             --- |
+| I/O            |     0.012 |       15 |       106 |           14.15 |
+| Static Power   |     0.073 |          |           |                 |
+| Total          |     0.566 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,9 +71,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.595 |       0.576 |      0.019 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.120 |       0.107 |      0.013 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     0.826 |       0.825 |      0.001 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.504 |       0.494 |      0.010 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -138,11 +138,11 @@ Table of Contents
 +---------------------------+-----------+
 | Name                      | Power (W) |
 +---------------------------+-----------+
-| Lab4_Team3_Stopwatch_fpga |     3.491 |
-|   d1                      |     0.158 |
-|   d2                      |     0.150 |
-|   detri                   |     0.089 |
-|   rst                     |     0.089 |
+| Lab4_Team3_Stopwatch_fpga |     0.494 |
+|   d1                      |     0.150 |
+|   d2                      |     0.117 |
+|   derst                   |     0.093 |
+|   detri                   |     0.093 |
 +---------------------------+-----------+
 
 

@@ -1,10 +1,11 @@
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/Vivado/Lab 4/stopwatch/stopwatch.srcs/sources_1/new/Lab4_Team3_Stopwatch_fpga.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Lab4_Team3_Stopwatch_fpga
-WARNING: [VRFC 10-3380] identifier 'state' is used before its declaration [E:/Code/Vivado/Lab 4/stopwatch/stopwatch.srcs/sources_1/new/Lab4_Team3_Stopwatch_fpga.v:57]
-WARNING: [VRFC 10-3380] identifier 'state' is used before its declaration [E:/Code/Vivado/Lab 4/stopwatch/stopwatch.srcs/sources_1/new/Lab4_Team3_Stopwatch_fpga.v:61]
+WARNING: [VRFC 10-3380] identifier 'state' is used before its declaration [E:/Code/Vivado/Lab 4/stopwatch/stopwatch.srcs/sources_1/new/Lab4_Team3_Stopwatch_fpga.v:68]
+WARNING: [VRFC 10-3380] identifier 'state' is used before its declaration [E:/Code/Vivado/Lab 4/stopwatch/stopwatch.srcs/sources_1/new/Lab4_Team3_Stopwatch_fpga.v:72]
+WARNING: [VRFC 10-3380] identifier 'state' is used before its declaration [E:/Code/Vivado/Lab 4/stopwatch/stopwatch.srcs/sources_1/new/Lab4_Team3_Stopwatch_fpga.v:77]
 INFO: [VRFC 10-311] analyzing module debounce
 INFO: [VRFC 10-311] analyzing module onePulse
 INFO: [VRFC 10-311] analyzing module div_clk
-WARNING: [VRFC 10-3380] identifier 'counter' is used before its declaration [E:/Code/Vivado/Lab 4/stopwatch/stopwatch.srcs/sources_1/new/Lab4_Team3_Stopwatch_fpga.v:198]
+WARNING: [VRFC 10-3380] identifier 'counter' is used before its declaration [E:/Code/Vivado/Lab 4/stopwatch/stopwatch.srcs/sources_1/new/Lab4_Team3_Stopwatch_fpga.v:222]
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/Vivado/Lab 4/stopwatch/stopwatch.srcs/sources_1/new/tb.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module tb

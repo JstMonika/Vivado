@@ -47,11 +47,11 @@ initial begin
     #150
     @(negedge clk)
     trigger = 0;
-    #500
+    #200
     
     @(negedge clk)
     rst_n = 1;
-    #600
+    #200
     @(negedge clk)
     rst_n = 0;
     

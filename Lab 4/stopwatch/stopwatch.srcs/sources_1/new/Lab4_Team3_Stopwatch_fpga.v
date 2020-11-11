@@ -21,10 +21,25 @@
 
 
 module Lab4_Team3_Stopwatch_fpga(clk, rst_n, trigger, display, led);
-    input clk, rst_n, trigger;
-    output reg [7:0] display;
-    output reg [3:0] led;
     
+    // basic input.
+    input clk, rst_n, trigger;
+    
+    // debounce, onepulse, inverter.
+    wire neg_rst, de_rst_n, op_rst_n;
+    wire dis_clk, cha_clk;
+    wire de_trigger, op_trigger;
+    
+    // current time, next time.
+    reg [3:0] min, tsec, sec, dsec;
+    reg [3:0] nmin, ntsec, nsec, ndsec;
+    
+    // display.
+    output reg [3:0] led;
+    output reg [7:0] display;
+    reg [7:0] next_display;
+    
+    // parameter.
     parameter one = 7'b1101101;
     parameter two = 7'b0100010;
     parameter three = 7'b0100100;
@@ -36,42 +51,45 @@ module Lab4_Team3_Stopwatch_fpga(clk, rst_n, trigger, display, led);
     parameter nine = 7'b0000100;
     parameter zero = 7'b0001000;
     
-    wire neg_rst, de_rst_n, op_rst_n;
-    wire dis_clk, cha_clk;
-    debounce rst(clk, rst_n, de_rst_n);
-    onePulse oprst(cha_clk, de_rst_n, op_rst_n);
+    debounce derst(clk, rst_n, de_rst_n);
+    onePulse oprst(clk, cha_clk, de_rst_n, op_rst_n);
+    assign neg_rst = ~de_rst_n;
     
-    wire de_trigger, op_trigger;
     debounce detri(clk, trigger, de_trigger);
-    onePulse optri(cha_clk, de_trigger, op_trigger);
+    onePulse optri(clk, cha_clk, de_trigger, op_trigger);
     
-    assign neg_rst = ~rst_n;
     div_clk d1(clk, neg_rst, dis_clk, 30'd270000);
-    div_clk d2(clk, neg_rst, cha_clk, 30'd100000000);
+    div_clk d2(clk, neg_rst, cha_clk, 30'd10000000);
     
-    reg [3:0] min, tsec, sec, dsec;
-    reg [3:0] nmin, ntsec, nsec, ndsec;
-    reg [7:0] next_display;
-    
-    always @(posedge cha_clk) begin
-        if (op_rst_n) begin
-            state <= IDLE;
-            {min, tsec, sec, dsec} <= 16'b0;
+    always @(posedge clk) begin
+        if (cha_clk) begin
+            if (!neg_rst) begin
+                state <= IDLE;
+                {min, tsec, sec, dsec} <= 16'b0;
+            end
+            else begin
+                state <= next_state;
+                {min, tsec, sec, dsec} <= {nmin, ntsec, nsec, ndsec};
+            end
         end
         else begin
-            state <= next_state;
-            {min, tsec, sec, dsec} <= {nmin, ntsec, nsec, ndsec};
+            state <= state;
+            {min, tsec, sec, dsec} <= {min, tsec, sec, dsec};
         end
-    end
     
-    always @(posedge dis_clk) begin
-        if (op_rst_n) begin
-            led <= 4'b0111;
-            display <= nmin;
+        if (dis_clk) begin
+            if (op_rst_n) begin
+                led <= 4'b0111;
+                display <= nmin;
+            end
+            else begin
+                led <= {led[0], led[3:1]};
+                display <= next_display;
+            end
         end
         else begin
-            led <= {led[0], led[3:1]};
-            display <= next_display;
+            led <= led;
+            display <= display;
         end
     end
     
@@ -171,21 +189,25 @@ module debounce(clk, in, out);
     reg [29:0] DFF;
     assign out = &DFF;
     
-    always @(posedge clk) begin
-        DFF <= {in, DFF[29:1]};
-    end
+    always @(posedge clk) DFF <= {in, DFF[29:1]};
     
 endmodule
 
-module onePulse(clk, in, out);
-    input clk, in;
+module onePulse(clk, check, in, out);
+
+    input clk, check, in;
     output reg out;
     
     reg delay;
-    
     always @(posedge clk) begin
-        delay <= in;
-        out <= (in && ~delay);
+        if (check == 1'b1) begin
+            delay <= in;
+            out <= (in && ~delay);
+        end
+        else begin
+            delay <= delay;
+            out <= out;
+        end
     end
     
 endmodule
@@ -205,4 +227,5 @@ module div_clk(clk, rst_n, out, div);
         else
             counter <= (counter == div ? 30'b0 : counter + 30'b1);
     end
+    
 endmodule

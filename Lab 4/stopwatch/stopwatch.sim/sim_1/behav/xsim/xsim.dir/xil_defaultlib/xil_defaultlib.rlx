@@ -3,5 +3,5 @@
 May 27 2020
 20:09:33
 E:/Code/Vivado/Lab 4/stopwatch/stopwatch.sim/sim_1/behav/xsim/glbl.v,1590624368,verilog,,,,glbl,,,,,,,,
-E:/Code/Vivado/Lab 4/stopwatch/stopwatch.srcs/sources_1/new/Lab4_Team3_Stopwatch_fpga.v,1604985810,verilog,,E:/Code/Vivado/Lab 4/stopwatch/stopwatch.srcs/sources_1/new/tb.v,,Lab4_Team3_Stopwatch_fpga;debounce;div_clk;onePulse,,,,,,,,
-E:/Code/Vivado/Lab 4/stopwatch/stopwatch.srcs/sources_1/new/tb.v,1604982705,verilog,,,,tb,,,,,,,,
+E:/Code/Vivado/Lab 4/stopwatch/stopwatch.srcs/sources_1/new/Lab4_Team3_Stopwatch_fpga.v,1605016792,verilog,,E:/Code/Vivado/Lab 4/stopwatch/stopwatch.srcs/sources_1/new/tb.v,,Lab4_Team3_Stopwatch_fpga;debounce;div_clk;onePulse,,,,,,,,
+E:/Code/Vivado/Lab 4/stopwatch/stopwatch.srcs/sources_1/new/tb.v,1605018038,verilog,,,,tb,,,,,,,,
