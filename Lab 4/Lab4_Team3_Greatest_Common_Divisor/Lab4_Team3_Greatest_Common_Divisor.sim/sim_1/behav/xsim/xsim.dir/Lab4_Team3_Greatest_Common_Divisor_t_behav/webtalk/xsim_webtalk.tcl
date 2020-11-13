@@ -1,6 +1,6 @@
 webtalk_init -webtalk_dir E:/Code/Vivado/Lab 4/Lab4_Team3_Greatest_Common_Divisor/Lab4_Team3_Greatest_Common_Divisor.sim/sim_1/behav/xsim/xsim.dir/Lab4_Team3_Greatest_Common_Divisor_t_behav/webtalk/
 webtalk_register_client -client project
-webtalk_add_data -client project -key date_generated -value "Mon Nov  9 21:31:49 2020" -context "software_version_and_target_device"
+webtalk_add_data -client project -key date_generated -value "Thu Nov 12 22:38:55 2020" -context "software_version_and_target_device"
 webtalk_add_data -client project -key product_version -value "XSIM v2020.1 (64-bit)" -context "software_version_and_target_device"
 webtalk_add_data -client project -key build_version -value "2902540" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_platform -value "WIN64" -context "software_version_and_target_device"
@@ -14,7 +14,7 @@ webtalk_add_data -client project -key target_package -value "not_applicable" -co
 webtalk_add_data -client project -key target_speed -value "not_applicable" -context "software_version_and_target_device"
 webtalk_add_data -client project -key random_id -value "a40a191f-1f11-4426-98df-1652a873d6cf" -context "software_version_and_target_device"
 webtalk_add_data -client project -key project_id -value "18c638339831491b94330e366a20dfac" -context "software_version_and_target_device"
-webtalk_add_data -client project -key project_iteration -value "10" -context "software_version_and_target_device"
+webtalk_add_data -client project -key project_iteration -value "13" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_name -value "Windows Server 2016 or Windows 10" -context "user_environment"
 webtalk_add_data -client project -key os_release -value "major release  (build 9200)" -context "user_environment"
 webtalk_add_data -client project -key cpu_name -value "Intel(R) Core(TM) i5-4460  CPU @ 3.20GHz" -context "user_environment"
@@ -26,7 +26,7 @@ webtalk_add_data -client xsim -key Command -value "xsim" -context "xsim\\command
 webtalk_add_data -client xsim -key trace_waveform -value "true" -context "xsim\\usage"
 webtalk_add_data -client xsim -key runtime -value "60 ns" -context "xsim\\usage"
 webtalk_add_data -client xsim -key iteration -value "0" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Simulation_Time -value "0.01_sec" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Simulation_Memory -value "7112_KB" -context "xsim\\usage"
-webtalk_transmit -clientid 170661042 -regid "" -xml E:/Code/Vivado/Lab 4/Lab4_Team3_Greatest_Common_Divisor/Lab4_Team3_Greatest_Common_Divisor.sim/sim_1/behav/xsim/xsim.dir/Lab4_Team3_Greatest_Common_Divisor_t_behav/webtalk/usage_statistics_ext_xsim.xml -html E:/Code/Vivado/Lab 4/Lab4_Team3_Greatest_Common_Divisor/Lab4_Team3_Greatest_Common_Divisor.sim/sim_1/behav/xsim/xsim.dir/Lab4_Team3_Greatest_Common_Divisor_t_behav/webtalk/usage_statistics_ext_xsim.html -wdm E:/Code/Vivado/Lab 4/Lab4_Team3_Greatest_Common_Divisor/Lab4_Team3_Greatest_Common_Divisor.sim/sim_1/behav/xsim/xsim.dir/Lab4_Team3_Greatest_Common_Divisor_t_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
+webtalk_add_data -client xsim -key Simulation_Time -value "0.08_sec" -context "xsim\\usage"
+webtalk_add_data -client xsim -key Simulation_Memory -value "7128_KB" -context "xsim\\usage"
+webtalk_transmit -clientid 883348487 -regid "" -xml E:/Code/Vivado/Lab 4/Lab4_Team3_Greatest_Common_Divisor/Lab4_Team3_Greatest_Common_Divisor.sim/sim_1/behav/xsim/xsim.dir/Lab4_Team3_Greatest_Common_Divisor_t_behav/webtalk/usage_statistics_ext_xsim.xml -html E:/Code/Vivado/Lab 4/Lab4_Team3_Greatest_Common_Divisor/Lab4_Team3_Greatest_Common_Divisor.sim/sim_1/behav/xsim/xsim.dir/Lab4_Team3_Greatest_Common_Divisor_t_behav/webtalk/usage_statistics_ext_xsim.html -wdm E:/Code/Vivado/Lab 4/Lab4_Team3_Greatest_Common_Divisor/Lab4_Team3_Greatest_Common_Divisor.sim/sim_1/behav/xsim/xsim.dir/Lab4_Team3_Greatest_Common_Divisor_t_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
 webtalk_terminate
