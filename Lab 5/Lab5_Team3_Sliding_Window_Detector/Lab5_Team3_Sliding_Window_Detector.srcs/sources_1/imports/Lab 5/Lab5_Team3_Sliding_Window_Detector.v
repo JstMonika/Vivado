@@ -1,3 +1,4 @@
+/*
 `timescale 1ns/1ps
 
 module Sliding_Window_Detector (clk, rst_n, in, dec1, dec2);
@@ -76,4 +77,133 @@ module Sliding_Window_Detector (clk, rst_n, in, dec1, dec2);
         endcase
     end
     
+endmodule
+*/
+`timescale 1ns/1ps
+
+module Sliding_Window_Detector (clk, rst_n, in, dec1, dec2);
+input clk, rst_n;
+input in;
+output reg dec1, dec2;
+
+reg a1,a2;
+
+reg [2:0] d1_state,d1_nstate,d2_state,d2_nstate;
+
+parameter IDLE = 3'b110;
+parameter S0 = 3'b000;
+parameter S1 = 3'b001;
+parameter S2 = 3'b010;
+parameter S3 = 3'b011;
+parameter S4 = 3'b100;
+parameter S5 = 3'b101;
+
+
+always @ (posedge clk)begin
+	if(!rst_n)begin
+		d1_state <= IDLE;
+		d1_state <= IDLE;
+	end
+	else begin
+		d1_state <= d1_nstate;
+		d2_state <= d2_nstate;
+	end
+end
+
+always @ (*)begin
+	case(d1_state)
+		S0:begin  //
+			dec1 = 0;
+			if(in)
+				d1_nstate = S1;
+			else
+				d1_nstate = S0;
+		end
+		S1:begin
+			dec1 = 0;
+			if(in)
+				d1_nstate = S3;
+			else
+				d1_nstate = S2;
+		end
+		S2:begin
+			if(in)begin 
+				d1_nstate = S1;
+				dec1 = 1;
+			end
+			else begin
+				d1_nstate = S0;
+				dec1 = 0;
+			end
+		end
+		S3:begin
+			dec1 = 0;
+			if(in)
+				d1_nstate = S4;
+			else
+				d1_nstate = S2;
+		end
+		S4:begin
+			dec1 = 0;
+			if(in)
+				d1_nstate = S5;
+			else
+				d1_nstate = S2;
+		end
+		S5:begin
+			dec1 = 0;
+			d1_nstate = S5;
+		end
+		default:begin
+			dec1 = 0;
+			if(in)
+				d1_nstate = S1;
+			else
+				d1_nstate = S0;
+		end
+	endcase
+
+	case(d2_state)
+		S0:begin
+			dec2 = 0;
+			if(in)
+				d2_nstate = S1;
+			else
+				d2_nstate = S0;
+		end
+		S1:begin
+			dec2 = 0;
+			if(in)
+				d2_nstate = S2;
+			else
+				d2_nstate = S0;
+		end
+		S2:begin
+			dec2 = 0;
+			if(in)
+				d2_nstate = S2;
+			else
+				d2_nstate = S3;
+		end
+		S3:begin
+			if(in)begin 
+				d2_nstate = S1;
+				dec2 = 1;
+			end
+			else begin
+				d2_nstate = S0;
+				dec2 = 0;
+			end
+		end
+		default:begin
+		      dec2 = 0;
+			if(in)
+				d2_nstate = S1;
+			else
+				d2_nstate = S0;
+		end
+	endcase
+		
+end
+
 endmodule

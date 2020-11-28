@@ -1,0 +1,1458 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Thu Nov 26 20:43:53 2020
+# Process ID: 25268
+# Current directory: E:/Code/Vivado/Lab 5/FPGA1/FPGA_1.runs/impl_1
+# Command line: vivado.exe -log Lab5_TeamX_Musical_Scale_fpga.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source Lab5_TeamX_Musical_Scale_fpga.tcl -notrace
+# Log file: E:/Code/Vivado/Lab 5/FPGA1/FPGA_1.runs/impl_1/Lab5_TeamX_Musical_Scale_fpga.vdi
+# Journal file: E:/Code/Vivado/Lab 5/FPGA1/FPGA_1.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source Lab5_TeamX_Musical_Scale_fpga.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'e:/Code/Vivado/Lab 5/Keyboard-and-Audio-Sample-Codes/Keyboard Sample Code/Keyboard Sample Code/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/Vivado/2020.1/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is E:/Code/Vivado/Lab 5/FPGA1/FPGA_1.runs/impl_1/{E:/Code/Vivado/Lab 5/FPGA1/FPGA_1.cache/ip} 
+Command: link_design -top Lab5_TeamX_Musical_Scale_fpga -part xc7a35tcpg236-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Project 1-454] Reading design checkpoint 'e:/Code/Vivado/Lab 5/FPGA1/FPGA_1.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0.dcp' for cell 'key_de/inst'
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 1024.891 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 494 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2020.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [E:/Code/Vivado/Lab 5/FPGA1/FPGA_1.srcs/constrs_1/imports/new/Lab5_TeamX_Musical_Scale_fpga.xdc]
+WARNING: [Vivado 12-584] No ports matched 'up'. [E:/Code/Vivado/Lab 5/FPGA1/FPGA_1.srcs/constrs_1/imports/new/Lab5_TeamX_Musical_Scale_fpga.xdc:37]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/Code/Vivado/Lab 5/FPGA1/FPGA_1.srcs/constrs_1/imports/new/Lab5_TeamX_Musical_Scale_fpga.xdc:37]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'up'. [E:/Code/Vivado/Lab 5/FPGA1/FPGA_1.srcs/constrs_1/imports/new/Lab5_TeamX_Musical_Scale_fpga.xdc:38]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/Code/Vivado/Lab 5/FPGA1/FPGA_1.srcs/constrs_1/imports/new/Lab5_TeamX_Musical_Scale_fpga.xdc:38]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [E:/Code/Vivado/Lab 5/FPGA1/FPGA_1.srcs/constrs_1/imports/new/Lab5_TeamX_Musical_Scale_fpga.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1024.891 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 2 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 2 instances
+
+11 Infos, 3 Warnings, 2 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 1024.891 ; gain = 0.000
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1024.891 ; gain = 0.000
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: 16e5f1153
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1278.691 ; gain = 253.801
+
+Starting Logic Optimization Task
+
+Phase 1 Retarget
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: 16e5f1153
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.969 . Memory (MB): peak = 1482.918 ; gain = 0.000
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 0 cells
+
+Phase 2 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 2 Constant propagation | Checksum: 1a47e4d65
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1482.918 ; gain = 0.000
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
+
+Phase 3 Sweep
+Phase 3 Sweep | Checksum: 13204c60d
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1482.918 ; gain = 0.000
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 0 cells
+
+Phase 4 BUFG optimization
+Phase 4 BUFG optimization | Checksum: 13204c60d
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1482.918 ; gain = 0.000
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 5 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 5 Shift Register Optimization | Checksum: 13204c60d
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1482.918 ; gain = 0.000
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 6 Post Processing Netlist
+Phase 6 Post Processing Netlist | Checksum: 13204c60d
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1482.918 ; gain = 0.000
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |               0  |               0  |                                              0  |
+|  Constant propagation         |               0  |               0  |                                              0  |
+|  Sweep                        |               0  |               0  |                                              0  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1482.918 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: 1dead8cc7
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1482.918 ; gain = 0.000
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+Ending Power Optimization Task | Checksum: 1dead8cc7
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.066 . Memory (MB): peak = 1482.918 ; gain = 0.000
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 1dead8cc7
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1482.918 ; gain = 0.000
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1482.918 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: 1dead8cc7
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1482.918 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+28 Infos, 3 Warnings, 2 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 1482.918 ; gain = 458.027
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.041 . Memory (MB): peak = 1482.918 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'E:/Code/Vivado/Lab 5/FPGA1/FPGA_1.runs/impl_1/Lab5_TeamX_Musical_Scale_fpga_opt.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file Lab5_TeamX_Musical_Scale_fpga_drc_opted.rpt -pb Lab5_TeamX_Musical_Scale_fpga_drc_opted.pb -rpx Lab5_TeamX_Musical_Scale_fpga_drc_opted.rpx
+Command: report_drc -file Lab5_TeamX_Musical_Scale_fpga_drc_opted.rpt -pb Lab5_TeamX_Musical_Scale_fpga_drc_opted.pb -rpx Lab5_TeamX_Musical_Scale_fpga_drc_opted.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file E:/Code/Vivado/Lab 5/FPGA1/FPGA_1.runs/impl_1/Lab5_TeamX_Musical_Scale_fpga_drc_opted.rpt.
+report_drc completed successfully
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1483.723 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 18e807d2e
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.095 . Memory (MB): peak = 1483.723 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1483.723 ; gain = 0.000
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: ddcfc7eb
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1492.855 ; gain = 9.133
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 1cd205e37
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1492.855 ; gain = 9.133
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 1cd205e37
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1492.855 ; gain = 9.133
+Phase 1 Placer Initialization | Checksum: 1cd205e37
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1492.855 ; gain = 9.133
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 1395fa87d
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1492.855 ; gain = 9.133
+
+Phase 2.2 Global Placement Core
+
+Phase 2.2.1 Physical Synthesis In Placer
+INFO: [Physopt 32-1035] Found 0 LUTNM shape to break, 4 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1044] Break lutnm for timing: one critical 0, two critical 0, total 0, new lutff created 0
+INFO: [Physopt 32-775] End 1 Pass. Optimized 2 nets or cells. Created 0 new cell, deleted 2 existing cells and moved 0 existing cell
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-1123] No candidate cells found for Shift Register to Pipeline optimization
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-677] No candidate cells for Shift Register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-949] No candidate nets found for HD net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1492.855 ; gain = 0.000
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |            0  |              2  |                     2  |           0  |           1  |  00:00:00  |
+|  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                                     |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register                                   |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  URAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |            0  |              2  |                     2  |           0  |           8  |  00:00:00  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.2.1 Physical Synthesis In Placer | Checksum: 2378f6d8e
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:08 . Memory (MB): peak = 1492.855 ; gain = 9.133
+Phase 2.2 Global Placement Core | Checksum: 232edc056
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 1492.855 ; gain = 9.133
+Phase 2 Global Placement | Checksum: 232edc056
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 1492.855 ; gain = 9.133
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 1b4141379
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 1492.855 ; gain = 9.133
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 20a9bdccc
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 1492.855 ; gain = 9.133
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 201aa1e42
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 1492.855 ; gain = 9.133
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 1dd11a36c
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 1492.855 ; gain = 9.133
+
+Phase 3.5 Fast Optimization
+Phase 3.5 Fast Optimization | Checksum: 20b36689c
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:12 . Memory (MB): peak = 1492.855 ; gain = 9.133
+
+Phase 3.6 Small Shape Detail Placement
+Phase 3.6 Small Shape Detail Placement | Checksum: 1ef08d961
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:13 . Memory (MB): peak = 1492.855 ; gain = 9.133
+
+Phase 3.7 Re-assign LUT pins
+Phase 3.7 Re-assign LUT pins | Checksum: 1fb95052c
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:13 . Memory (MB): peak = 1492.855 ; gain = 9.133
+
+Phase 3.8 Pipeline Register Optimization
+Phase 3.8 Pipeline Register Optimization | Checksum: 19e297bf2
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:13 . Memory (MB): peak = 1492.855 ; gain = 9.133
+
+Phase 3.9 Fast Optimization
+Phase 3.9 Fast Optimization | Checksum: 9d61915d
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:16 . Memory (MB): peak = 1492.855 ; gain = 9.133
+Phase 3 Detail Placement | Checksum: 9d61915d
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:16 . Memory (MB): peak = 1492.855 ; gain = 9.133
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 114186510
+
+Phase 4.1.1.1 BUFG Insertion
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-70.417 | TNS=-4359.894 |
+Phase 1 Physical Synthesis Initialization | Checksum: 1425c8ba3
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.089 . Memory (MB): peak = 1510.434 ; gain = 0.000
+INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to Illegal Netlist: 0.
+Ending Physical Synthesis Task | Checksum: d5dd567f
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.099 . Memory (MB): peak = 1510.434 ; gain = 0.000
+Phase 4.1.1.1 BUFG Insertion | Checksum: 114186510
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:17 . Memory (MB): peak = 1510.434 ; gain = 26.711
+INFO: [Place 30-746] Post Placement Timing Summary WNS=-70.000. For the most accurate timing information please run report_timing.
+Phase 4.1.1 Post Placement Optimization | Checksum: 178898f92
+
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:39 . Memory (MB): peak = 1510.434 ; gain = 26.711
+Phase 4.1 Post Commit Optimization | Checksum: 178898f92
+
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:39 . Memory (MB): peak = 1510.434 ; gain = 26.711
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 178898f92
+
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:39 . Memory (MB): peak = 1510.434 ; gain = 26.711
+
+Phase 4.3 Placer Reporting
+Phase 4.3 Placer Reporting | Checksum: 178898f92
+
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:39 . Memory (MB): peak = 1510.434 ; gain = 26.711
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1510.434 ; gain = 0.000
+Phase 4.4 Final Placement Cleanup | Checksum: 1e833b321
+
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:39 . Memory (MB): peak = 1510.434 ; gain = 26.711
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 1e833b321
+
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:39 . Memory (MB): peak = 1510.434 ; gain = 26.711
+Ending Placer Task | Checksum: 1a4ec151f
+
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:39 . Memory (MB): peak = 1510.434 ; gain = 26.711
+INFO: [Common 17-83] Releasing license: Implementation
+67 Infos, 3 Warnings, 2 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:00:42 ; elapsed = 00:00:40 . Memory (MB): peak = 1510.434 ; gain = 26.711
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.380 . Memory (MB): peak = 1510.480 ; gain = 0.047
+INFO: [Common 17-1381] The checkpoint 'E:/Code/Vivado/Lab 5/FPGA1/FPGA_1.runs/impl_1/Lab5_TeamX_Musical_Scale_fpga_placed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_io -file Lab5_TeamX_Musical_Scale_fpga_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.046 . Memory (MB): peak = 1510.480 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_utilization -file Lab5_TeamX_Musical_Scale_fpga_utilization_placed.rpt -pb Lab5_TeamX_Musical_Scale_fpga_utilization_placed.pb
+INFO: [runtcl-4] Executing : report_control_sets -verbose -file Lab5_TeamX_Musical_Scale_fpga_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1510.480 ; gain = 0.000
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1510.480 ; gain = 0.000
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-70.197 | TNS=-4304.185 |
+Phase 1 Physical Synthesis Initialization | Checksum: 1901d38be
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1510.480 ; gain = 0.000
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-70.197 | TNS=-4304.185 |
+
+Phase 2 DSP Register Optimization
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 2 DSP Register Optimization | Checksum: 1901d38be
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1510.480 ; gain = 0.000
+
+Phase 3 Critical Path Optimization
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-70.197 | TNS=-4304.185 |
+INFO: [Physopt 32-702] Processed net beatSpeed/beat. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-81] Processed net BEAT_FREQ_reg_n_0_[1]. Replicated 3 times.
+INFO: [Physopt 32-735] Processed net BEAT_FREQ_reg_n_0_[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-70.170 | TNS=-4303.293 |
+INFO: [Physopt 32-572] Net BEAT_FREQ_reg_n_0_[1]_repN was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-662] Processed net BEAT_FREQ_reg_n_0_[1]_repN.  Did not re-place instance BEAT_FREQ_reg[1]_replica
+INFO: [Physopt 32-81] Processed net BEAT_FREQ_reg_n_0_[1]_repN. Replicated 3 times.
+INFO: [Physopt 32-735] Processed net BEAT_FREQ_reg_n_0_[1]_repN. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-70.161 | TNS=-4302.996 |
+INFO: [Physopt 32-662] Processed net BEAT_FREQ_reg_n_0_[1]_repN_3.  Did not re-place instance BEAT_FREQ_reg[1]_replica_3
+INFO: [Physopt 32-572] Net BEAT_FREQ_reg_n_0_[1]_repN_3 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-702] Processed net BEAT_FREQ_reg_n_0_[1]_repN_3. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/PWM_reg_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/PWM_reg_i_11_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/PWM_reg_i_25_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-735] Processed net beatSpeed/PWM_i_49_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-70.160 | TNS=-4302.995 |
+INFO: [Physopt 32-702] Processed net beatSpeed/PWM_reg_i_42_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-735] Processed net beatSpeed/PWM_i_66_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-70.139 | TNS=-4302.974 |
+INFO: [Physopt 32-735] Processed net beatSpeed/PWM_i_65_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-70.057 | TNS=-4302.892 |
+INFO: [Physopt 32-735] Processed net beatSpeed/PWM_i_50_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-70.019 | TNS=-4302.854 |
+INFO: [Physopt 32-735] Processed net beatSpeed/PWM_i_32_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-69.999 | TNS=-4302.834 |
+INFO: [Physopt 32-735] Processed net beatSpeed/PWM_i_48_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-69.984 | TNS=-4302.819 |
+INFO: [Physopt 32-735] Processed net beatSpeed/PWM_i_63_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-69.955 | TNS=-4302.790 |
+INFO: [Physopt 32-735] Processed net beatSpeed/PWM_i_31_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-69.946 | TNS=-4302.781 |
+INFO: [Physopt 32-702] Processed net beatSpeed/PWM_i_49_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-735] Processed net beatSpeed/PWM_i_1_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-69.685 | TNS=-4302.520 |
+INFO: [Physopt 32-702] Processed net beatSpeed/PWM_i_1_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_24_n_3. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_96_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_223_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_363_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_518_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_657_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_796_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_935_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1074_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1179_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_23_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_93_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_218_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_358_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_513_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_652_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_791_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_930_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1069_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1174_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_22_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_90_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_213_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_353_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_508_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_647_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_786_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_925_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1064_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1170_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_21_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_87_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_208_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_348_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_503_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_642_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_781_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_920_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1059_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1166_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_20_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_84_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_203_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_343_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_498_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_637_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_776_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_915_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1054_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1162_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_19_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_81_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_198_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_338_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_493_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_632_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_771_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_910_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1049_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1158_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_18_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_78_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_193_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_333_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_488_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_627_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_766_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_905_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1044_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1154_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_17_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_75_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_188_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_328_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_483_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_622_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_761_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_900_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1039_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1150_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_16_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_72_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_183_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_323_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_478_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_617_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_756_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_895_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1034_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1146_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_15_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_69_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_178_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_318_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_473_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_612_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_751_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_890_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1029_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1143_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_14_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_66_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_173_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_313_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_468_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_607_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_746_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_885_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1024_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1139_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_13_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_63_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_168_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_308_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_463_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_602_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_741_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_880_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1019_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1135_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_12_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_60_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_163_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_303_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_458_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_597_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_736_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_875_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1014_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1131_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_11_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_57_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_158_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_298_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_453_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_592_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_731_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_870_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1009_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_10_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_54_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_153_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_293_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_448_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_587_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_726_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_865_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1004_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_9_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_51_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_148_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_288_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_443_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_582_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_721_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_860_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_999_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1121_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_8_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_48_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_143_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_283_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_438_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_577_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_716_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_855_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_994_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1118_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_7_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_45_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_138_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_278_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_433_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_572_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_711_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_850_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_989_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1115_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_6_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_42_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_133_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_273_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_428_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_567_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_706_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_845_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_984_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1111_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_5_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_39_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_128_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_268_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_423_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_562_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_701_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_840_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_979_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1108_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_4_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_36_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_123_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_263_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_418_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_557_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_696_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_835_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_974_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_3_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_33_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_118_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_258_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_413_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_552_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_691_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_830_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_969_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1101_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_2_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_30_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_113_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_253_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_408_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_547_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_686_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_825_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_964_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1096_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_25_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_98_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_228_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_368_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_523_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_662_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_801_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_940_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1081_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty00[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_27_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_99_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_229_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_369_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_524_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_663_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_802_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-735] Processed net count_duty0_i_949_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-69.649 | TNS=-4301.332 |
+INFO: [Physopt 32-702] Processed net count_duty0_i_941_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-735] Processed net count_duty0_i_1083_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-69.534 | TNS=-4297.538 |
+INFO: [Physopt 32-702] Processed net count_duty00[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_105_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_108_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_234_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_374_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_529_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_668_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_807_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-735] Processed net count_duty0_i_952_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-69.508 | TNS=-4296.679 |
+INFO: [Physopt 32-735] Processed net count_duty0_i_816_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-69.488 | TNS=-4296.020 |
+INFO: [Physopt 32-702] Processed net count_duty0_i_946_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_1088_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty00[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_240_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_243_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_248_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_379_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_534_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_673_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_812_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_951_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_1095_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_n_84. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net clk_IBUF. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net clk. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/beat. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net BEAT_FREQ_reg_n_0_[1]_repN_3.  Did not re-place instance BEAT_FREQ_reg[1]_replica_3
+INFO: [Physopt 32-702] Processed net BEAT_FREQ_reg_n_0_[1]_repN_3. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/PWM_reg_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/PWM_i_49_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/PWM_i_1_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_24_n_3. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1179_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_23_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1174_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_22_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1170_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_21_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1166_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_20_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1162_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_19_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1158_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_18_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1154_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_17_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1150_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_16_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1146_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_15_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1143_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_14_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1139_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_13_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1135_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_12_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1131_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_11_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_10_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_9_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1121_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_8_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1118_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_7_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1115_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_6_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1111_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_5_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1108_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_4_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_3_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1101_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_2_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1096_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1081_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty00[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty00[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_1088_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty00[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_1095_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_n_84. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net clk_IBUF. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net clk. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-69.488 | TNS=-4296.020 |
+Phase 3 Critical Path Optimization | Checksum: 1901d38be
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1510.480 ; gain = 0.000
+
+Phase 4 Critical Path Optimization
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-69.488 | TNS=-4296.020 |
+INFO: [Physopt 32-702] Processed net beatSpeed/beat. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net BEAT_FREQ_reg_n_0_[1]_repN_3.  Did not re-place instance BEAT_FREQ_reg[1]_replica_3
+INFO: [Physopt 32-572] Net BEAT_FREQ_reg_n_0_[1]_repN_3 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-702] Processed net BEAT_FREQ_reg_n_0_[1]_repN_3. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/PWM_reg_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/PWM_reg_i_11_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/PWM_reg_i_25_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/PWM_i_49_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/PWM_i_1_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_24_n_3. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_96_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_223_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_363_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_518_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_657_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_796_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_935_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1074_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1179_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_23_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_93_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_218_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_358_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_513_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_652_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_791_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_930_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1069_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1174_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_22_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_90_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_213_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_353_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_508_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_647_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_786_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_925_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1064_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1170_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_21_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_87_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_208_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_348_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_503_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_642_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_781_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_920_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1059_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1166_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_20_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_84_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_203_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_343_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_498_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_637_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_776_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_915_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1054_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1162_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_19_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_81_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_198_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_338_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_493_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_632_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_771_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_910_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1049_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1158_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_18_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_78_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_193_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_333_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_488_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_627_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_766_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_905_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1044_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1154_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_17_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_75_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_188_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_328_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_483_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_622_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_761_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_900_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1039_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1150_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_16_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_72_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_183_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_323_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_478_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_617_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_756_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_895_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1034_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1146_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_15_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_69_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_178_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_318_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_473_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_612_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_751_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_890_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1029_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1143_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_14_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_66_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_173_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_313_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_468_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_607_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_746_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_885_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1024_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1139_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_13_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_63_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_168_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_308_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_463_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_602_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_741_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_880_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1019_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1135_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_12_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_60_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_163_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_303_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_458_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_597_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_736_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_875_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1014_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1131_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_11_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_57_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_158_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_298_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_453_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_592_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_731_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_870_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1009_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_10_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_54_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_153_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_293_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_448_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_587_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_726_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_865_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1004_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_9_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_51_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_148_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_288_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_443_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_582_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_721_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_860_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_999_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1121_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_8_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_48_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_143_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_283_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_438_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_577_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_716_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_855_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_994_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1118_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_7_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_45_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_138_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_278_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_433_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_572_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_711_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_850_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_989_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1115_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_6_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_42_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_133_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_273_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_428_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_567_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_706_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_845_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_984_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1111_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_5_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_39_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_128_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_268_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_423_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_562_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_701_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_840_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_979_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1108_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_4_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_36_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_123_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_263_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_418_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_557_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_696_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_835_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_974_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_3_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_33_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_118_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_258_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_413_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_552_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_691_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_830_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_969_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1101_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_2_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_30_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_113_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_253_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_408_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_547_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_686_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_825_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_964_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1096_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_25_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_98_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_228_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_368_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_523_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_662_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_801_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_940_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1081_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty00[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_27_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_99_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_229_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_369_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_524_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_663_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_802_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_941_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty00[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_105_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_108_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_234_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_374_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_529_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_668_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_807_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_946_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_1088_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty00[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_240_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_243_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_248_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_379_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_534_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_673_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_812_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_951_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_1095_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_n_84. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net clk_IBUF. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net clk. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/beat. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net BEAT_FREQ_reg_n_0_[1]_repN_3.  Did not re-place instance BEAT_FREQ_reg[1]_replica_3
+INFO: [Physopt 32-702] Processed net BEAT_FREQ_reg_n_0_[1]_repN_3. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/PWM_reg_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/PWM_i_49_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/PWM_i_1_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_24_n_3. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1179_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_23_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1174_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_22_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1170_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_21_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1166_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_20_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1162_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_19_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1158_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_18_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1154_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_17_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1150_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_16_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1146_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_15_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1143_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_14_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1139_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_13_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1135_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_12_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1131_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_11_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_10_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_9_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1121_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_8_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1118_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_7_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1115_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_6_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1111_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_5_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1108_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_4_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_3_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1101_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_2_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1096_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_i_1081_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty00[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty00[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_1088_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty00[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net count_duty0_i_1095_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net beatSpeed/count_duty0_n_84. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net clk_IBUF. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net clk. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-69.488 | TNS=-4296.020 |
+Phase 4 Critical Path Optimization | Checksum: 1901d38be
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 1510.480 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 1510.480 ; gain = 0.000
+INFO: [Physopt 32-603] Post Physical Optimization Timing Summary | WNS=-69.488 | TNS=-4296.020 |
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization   |  WNS Gain (ns)  |  TNS Gain (ns)  |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  DSP Register   |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Critical Path  |          0.709  |          8.165  |            6  |              0  |                    15  |           0  |           2  |  00:00:05  |
+|  Total          |          0.709  |          8.165  |            6  |              0  |                    15  |           0  |           3  |  00:00:05  |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1510.480 ; gain = 0.000
+Ending Physical Synthesis Task | Checksum: 15ecf5e45
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 1510.480 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+793 Infos, 3 Warnings, 2 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+phys_opt_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 1510.480 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.324 . Memory (MB): peak = 1522.613 ; gain = 12.133
+INFO: [Common 17-1381] The checkpoint 'E:/Code/Vivado/Lab 5/FPGA1/FPGA_1.runs/impl_1/Lab5_TeamX_Musical_Scale_fpga_physopt.dcp' has been generated.
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
+Checksum: PlaceDB: ac02a0ca ConstDB: 0 ShapeSum: 88d02ebe RouteDB: 0
+
+Phase 1 Build RT Design
+Phase 1 Build RT Design | Checksum: 80ba25b5
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:25 . Memory (MB): peak = 1613.629 ; gain = 79.934
+Post Restoration Checksum: NetGraph: 46b286df NumContArr: 3a079ed6 Constraints: 0 Timing: 0
+
+Phase 2 Router Initialization
+
+Phase 2.1 Create Timer
+Phase 2.1 Create Timer | Checksum: 80ba25b5
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:26 . Memory (MB): peak = 1613.629 ; gain = 79.934
+
+Phase 2.2 Fix Topology Constraints
+Phase 2.2 Fix Topology Constraints | Checksum: 80ba25b5
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:26 . Memory (MB): peak = 1619.641 ; gain = 85.945
+
+Phase 2.3 Pre Route Cleanup
+Phase 2.3 Pre Route Cleanup | Checksum: 80ba25b5
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:26 . Memory (MB): peak = 1619.641 ; gain = 85.945
+ Number of Nodes with overlaps = 0
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: 1fe2ee140
+
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:27 . Memory (MB): peak = 1631.629 ; gain = 97.934
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-67.474| TNS=-4153.685| WHS=-0.119 | THS=-3.608 |
+
+Phase 2 Router Initialization | Checksum: 1fe278d6f
+
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:28 . Memory (MB): peak = 1636.238 ; gain = 102.543
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 2397
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 2397
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+
+Phase 3 Initial Routing
+Phase 3 Initial Routing | Checksum: 1ce8b7cd5
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:29 . Memory (MB): peak = 1636.555 ; gain = 102.859
+INFO: [Route 35-580] Design has 47 pins with tight setup and hold constraints.
+
+The top 5 pins with tight setup and hold constraints:
+
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|       Launch Clock       |      Capture Clock       |                                                 Pin                                                      |
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|              sys_clk_pin |              sys_clk_pin |                                                                                 beatSpeed/count_reg[30]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                 beatSpeed/count_reg[25]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                 beatSpeed/count_reg[26]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                 beatSpeed/count_reg[21]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                 beatSpeed/count_reg[22]/D|
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+
+File with complete list of pins: tight_setup_hold_pins.txt
+
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 680
+ Number of Nodes with overlaps = 149
+ Number of Nodes with overlaps = 74
+ Number of Nodes with overlaps = 38
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-72.172| TNS=-4520.923| WHS=N/A    | THS=N/A    |
+
+Phase 4.1 Global Iteration 0 | Checksum: 49858b3a
+
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:35 . Memory (MB): peak = 1637.578 ; gain = 103.883
+
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 167
+ Number of Nodes with overlaps = 64
+ Number of Nodes with overlaps = 31
+ Number of Nodes with overlaps = 23
+ Number of Nodes with overlaps = 17
+ Number of Nodes with overlaps = 10
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-72.574| TNS=-4535.418| WHS=N/A    | THS=N/A    |
+
+Phase 4.2 Global Iteration 1 | Checksum: 17dea02dc
+
+Time (s): cpu = 00:00:44 ; elapsed = 00:00:38 . Memory (MB): peak = 1637.625 ; gain = 103.930
+Phase 4 Rip-up And Reroute | Checksum: 17dea02dc
+
+Time (s): cpu = 00:00:44 ; elapsed = 00:00:38 . Memory (MB): peak = 1637.625 ; gain = 103.930
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+
+Phase 5.1.1 Update Timing
+Phase 5.1.1 Update Timing | Checksum: 234698d3d
+
+Time (s): cpu = 00:00:44 ; elapsed = 00:00:39 . Memory (MB): peak = 1637.625 ; gain = 103.930
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-72.164| TNS=-4520.395| WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+Phase 5.1 Delay CleanUp | Checksum: 174f05d98
+
+Time (s): cpu = 00:00:48 ; elapsed = 00:00:42 . Memory (MB): peak = 1650.703 ; gain = 117.008
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 174f05d98
+
+Time (s): cpu = 00:00:48 ; elapsed = 00:00:42 . Memory (MB): peak = 1650.703 ; gain = 117.008
+Phase 5 Delay and Skew Optimization | Checksum: 174f05d98
+
+Time (s): cpu = 00:00:49 ; elapsed = 00:00:42 . Memory (MB): peak = 1650.703 ; gain = 117.008
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 165043856
+
+Time (s): cpu = 00:00:49 ; elapsed = 00:00:42 . Memory (MB): peak = 1650.703 ; gain = 117.008
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-72.164| TNS=-4512.376| WHS=0.160  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: 165043856
+
+Time (s): cpu = 00:00:49 ; elapsed = 00:00:42 . Memory (MB): peak = 1650.703 ; gain = 117.008
+Phase 6 Post Hold Fix | Checksum: 165043856
+
+Time (s): cpu = 00:00:49 ; elapsed = 00:00:42 . Memory (MB): peak = 1650.703 ; gain = 117.008
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 1.04281 %
+  Global Horizontal Routing Utilization  = 0.913457 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Congestion Report
+North Dir 1x1 Area, Max Cong = 36.9369%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 54.955%, No Congested Regions.
+East Dir 1x1 Area, Max Cong = 38.2353%, No Congested Regions.
+West Dir 1x1 Area, Max Cong = 41.1765%, No Congested Regions.
+
+------------------------------
+Reporting congestion hotspots
+------------------------------
+Direction: North
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: South
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: East
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: West
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+
+Phase 7 Route finalize | Checksum: 132b26221
+
+Time (s): cpu = 00:00:49 ; elapsed = 00:00:42 . Memory (MB): peak = 1650.703 ; gain = 117.008
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 132b26221
+
+Time (s): cpu = 00:00:49 ; elapsed = 00:00:42 . Memory (MB): peak = 1650.703 ; gain = 117.008
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: 14e74158e
+
+Time (s): cpu = 00:00:49 ; elapsed = 00:00:42 . Memory (MB): peak = 1650.703 ; gain = 117.008
+
+Phase 10 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=-72.164| TNS=-4512.376| WHS=0.160  | THS=0.000  |
+
+WARNING: [Route 35-328] Router estimated timing not met.
+Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.
+Phase 10 Post Router Timing | Checksum: 14e74158e
+
+Time (s): cpu = 00:00:49 ; elapsed = 00:00:42 . Memory (MB): peak = 1650.703 ; gain = 117.008
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:00:49 ; elapsed = 00:00:43 . Memory (MB): peak = 1650.703 ; gain = 117.008
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+812 Infos, 4 Warnings, 2 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:00:51 ; elapsed = 00:00:44 . Memory (MB): peak = 1650.703 ; gain = 128.090
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.732 . Memory (MB): peak = 1650.703 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'E:/Code/Vivado/Lab 5/FPGA1/FPGA_1.runs/impl_1/Lab5_TeamX_Musical_Scale_fpga_routed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file Lab5_TeamX_Musical_Scale_fpga_drc_routed.rpt -pb Lab5_TeamX_Musical_Scale_fpga_drc_routed.pb -rpx Lab5_TeamX_Musical_Scale_fpga_drc_routed.rpx
+Command: report_drc -file Lab5_TeamX_Musical_Scale_fpga_drc_routed.rpt -pb Lab5_TeamX_Musical_Scale_fpga_drc_routed.pb -rpx Lab5_TeamX_Musical_Scale_fpga_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file E:/Code/Vivado/Lab 5/FPGA1/FPGA_1.runs/impl_1/Lab5_TeamX_Musical_Scale_fpga_drc_routed.rpt.
+report_drc completed successfully
+INFO: [runtcl-4] Executing : report_methodology -file Lab5_TeamX_Musical_Scale_fpga_methodology_drc_routed.rpt -pb Lab5_TeamX_Musical_Scale_fpga_methodology_drc_routed.pb -rpx Lab5_TeamX_Musical_Scale_fpga_methodology_drc_routed.rpx
+Command: report_methodology -file Lab5_TeamX_Musical_Scale_fpga_methodology_drc_routed.rpt -pb Lab5_TeamX_Musical_Scale_fpga_methodology_drc_routed.pb -rpx Lab5_TeamX_Musical_Scale_fpga_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 2 threads
+INFO: [Coretcl 2-1520] The results of Report Methodology are in file E:/Code/Vivado/Lab 5/FPGA1/FPGA_1.runs/impl_1/Lab5_TeamX_Musical_Scale_fpga_methodology_drc_routed.rpt.
+report_methodology completed successfully
+INFO: [runtcl-4] Executing : report_power -file Lab5_TeamX_Musical_Scale_fpga_power_routed.rpt -pb Lab5_TeamX_Musical_Scale_fpga_power_summary_routed.pb -rpx Lab5_TeamX_Musical_Scale_fpga_power_routed.rpx
+Command: report_power -file Lab5_TeamX_Musical_Scale_fpga_power_routed.rpt -pb Lab5_TeamX_Musical_Scale_fpga_power_summary_routed.pb -rpx Lab5_TeamX_Musical_Scale_fpga_power_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+WARNING: [Power 33-332] Found switching activity that implies high-fanout reset nets being asserted for excessive periods of time which may result in inaccurate power analysis.
+Resolution: To review and fix problems, please run Power Constraints Advisor in the GUI from Tools > Power Constraints Advisor or run report_power with the -advisory option to generate a text report.
+824 Infos, 5 Warnings, 2 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+INFO: [runtcl-4] Executing : report_route_status -file Lab5_TeamX_Musical_Scale_fpga_route_status.rpt -pb Lab5_TeamX_Musical_Scale_fpga_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -file Lab5_TeamX_Musical_Scale_fpga_timing_summary_routed.rpt -pb Lab5_TeamX_Musical_Scale_fpga_timing_summary_routed.pb -rpx Lab5_TeamX_Musical_Scale_fpga_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+INFO: [runtcl-4] Executing : report_incremental_reuse -file Lab5_TeamX_Musical_Scale_fpga_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [runtcl-4] Executing : report_clock_utilization -file Lab5_TeamX_Musical_Scale_fpga_clock_utilization_routed.rpt
+INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file Lab5_TeamX_Musical_Scale_fpga_bus_skew_routed.rpt -pb Lab5_TeamX_Musical_Scale_fpga_bus_skew_routed.pb -rpx Lab5_TeamX_Musical_Scale_fpga_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+Command: write_bitstream -force Lab5_TeamX_Musical_Scale_fpga.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+WARNING: [DRC DPIP-1] Input pipelining: DSP beatSpeed/count_duty0 input beatSpeed/count_duty0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP toneFreq/count_duty0 input toneFreq/count_duty0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPOP-1] PREG Output pipelining: DSP beatSpeed/count_duty0 output beatSpeed/count_duty0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC DPOP-1] PREG Output pipelining: DSP toneFreq/count_duty0 output toneFreq/count_duty0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP beatSpeed/count_duty0 multiplier stage beatSpeed/count_duty0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP toneFreq/count_duty0 multiplier stage toneFreq/count_duty0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 6 Warnings
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Designutils 20-2272] Running write_bitstream with 2 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Bitstream compression saved 13692288 bits.
+Writing bitstream ./Lab5_TeamX_Musical_Scale_fpga.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Project 1-120] WebTalk data collection is mandatory when using a WebPACK part without a full Vivado license. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
+INFO: [Common 17-83] Releasing license: Implementation
+843 Infos, 11 Warnings, 3 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 2080.168 ; gain = 408.609
+INFO: [Common 17-206] Exiting Vivado at Thu Nov 26 20:46:37 2020...

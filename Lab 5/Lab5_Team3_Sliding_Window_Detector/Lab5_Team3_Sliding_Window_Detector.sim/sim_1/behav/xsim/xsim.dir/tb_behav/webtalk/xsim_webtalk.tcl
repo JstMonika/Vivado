@@ -1,6 +1,6 @@
 webtalk_init -webtalk_dir E:/Code/Vivado/Lab 5/Lab5_Team3_Sliding_Window_Detector/Lab5_Team3_Sliding_Window_Detector.sim/sim_1/behav/xsim/xsim.dir/tb_behav/webtalk/
 webtalk_register_client -client project
-webtalk_add_data -client project -key date_generated -value "Wed Nov 25 03:03:23 2020" -context "software_version_and_target_device"
+webtalk_add_data -client project -key date_generated -value "Wed Nov 25 23:05:59 2020" -context "software_version_and_target_device"
 webtalk_add_data -client project -key product_version -value "XSIM v2020.1 (64-bit)" -context "software_version_and_target_device"
 webtalk_add_data -client project -key build_version -value "2902540" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_platform -value "WIN64" -context "software_version_and_target_device"
@@ -14,7 +14,7 @@ webtalk_add_data -client project -key target_package -value "not_applicable" -co
 webtalk_add_data -client project -key target_speed -value "not_applicable" -context "software_version_and_target_device"
 webtalk_add_data -client project -key random_id -value "a40a191f-1f11-4426-98df-1652a873d6cf" -context "software_version_and_target_device"
 webtalk_add_data -client project -key project_id -value "c340f48486364860945334dc47c14323" -context "software_version_and_target_device"
-webtalk_add_data -client project -key project_iteration -value "7" -context "software_version_and_target_device"
+webtalk_add_data -client project -key project_iteration -value "19" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_name -value "Windows Server 2016 or Windows 10" -context "user_environment"
 webtalk_add_data -client project -key os_release -value "major release  (build 9200)" -context "user_environment"
 webtalk_add_data -client project -key cpu_name -value "Intel(R) Core(TM) i5-4460  CPU @ 3.20GHz" -context "user_environment"
@@ -26,7 +26,7 @@ webtalk_add_data -client xsim -key Command -value "xsim" -context "xsim\\command
 webtalk_add_data -client xsim -key trace_waveform -value "true" -context "xsim\\usage"
 webtalk_add_data -client xsim -key runtime -value "48 ns" -context "xsim\\usage"
 webtalk_add_data -client xsim -key iteration -value "0" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Simulation_Time -value "0.06_sec" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Simulation_Memory -value "6560_KB" -context "xsim\\usage"
-webtalk_transmit -clientid 2998313589 -regid "" -xml E:/Code/Vivado/Lab 5/Lab5_Team3_Sliding_Window_Detector/Lab5_Team3_Sliding_Window_Detector.sim/sim_1/behav/xsim/xsim.dir/tb_behav/webtalk/usage_statistics_ext_xsim.xml -html E:/Code/Vivado/Lab 5/Lab5_Team3_Sliding_Window_Detector/Lab5_Team3_Sliding_Window_Detector.sim/sim_1/behav/xsim/xsim.dir/tb_behav/webtalk/usage_statistics_ext_xsim.html -wdm E:/Code/Vivado/Lab 5/Lab5_Team3_Sliding_Window_Detector/Lab5_Team3_Sliding_Window_Detector.sim/sim_1/behav/xsim/xsim.dir/tb_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
+webtalk_add_data -client xsim -key Simulation_Time -value "0.01_sec" -context "xsim\\usage"
+webtalk_add_data -client xsim -key Simulation_Memory -value "6584_KB" -context "xsim\\usage"
+webtalk_transmit -clientid 174479511 -regid "" -xml E:/Code/Vivado/Lab 5/Lab5_Team3_Sliding_Window_Detector/Lab5_Team3_Sliding_Window_Detector.sim/sim_1/behav/xsim/xsim.dir/tb_behav/webtalk/usage_statistics_ext_xsim.xml -html E:/Code/Vivado/Lab 5/Lab5_Team3_Sliding_Window_Detector/Lab5_Team3_Sliding_Window_Detector.sim/sim_1/behav/xsim/xsim.dir/tb_behav/webtalk/usage_statistics_ext_xsim.html -wdm E:/Code/Vivado/Lab 5/Lab5_Team3_Sliding_Window_Detector/Lab5_Team3_Sliding_Window_Detector.sim/sim_1/behav/xsim/xsim.dir/tb_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
 webtalk_terminate

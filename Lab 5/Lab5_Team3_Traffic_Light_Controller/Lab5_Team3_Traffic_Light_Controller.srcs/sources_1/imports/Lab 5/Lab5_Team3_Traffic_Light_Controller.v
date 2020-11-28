@@ -22,7 +22,7 @@ module Traffic_Light_Controller (clk, rst_n, lr_has_car, hw_light, lr_light);
 	parameter S2 = 3'b011;
 	parameter S3 = 3'b100;
 	parameter S4 = 3'b101;
-
+    
 	always @(posedge clk) begin
 		if (!rst_n) begin
 			state <= IDLE;
