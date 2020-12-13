@@ -35,7 +35,7 @@ module Lab4_Team3_Mealy_Sequence_Detector_t();
         
         #5
         @(negedge clk)
-        @(posedge clk) rst_n = 1;
+        @(negedge clk) rst_n = 1;
         
         repeat (2**10) begin
             @(negedge clk)
