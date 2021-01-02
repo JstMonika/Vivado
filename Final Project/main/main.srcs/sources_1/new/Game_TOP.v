@@ -28,16 +28,16 @@ module Game_TOP(
     input BTNL, // W19
     input BTNR, // T17
     input BTND, // U17
-    input [15:0] switch,
+    input [6:0] switch,
     
-    output [15:0] LED,
-    output [31:0] display,
-    output [1:0] eng_en,
-    output [1:0] eng_l,
-    output [1:0] eng_r
+    output [7:0] display,
+    output [3:0] digit,
+    output [15:0] LED
     
+    // output [1:0] eng_en,
+    // output [1:0] eng_l,
+    // output [1:0] eng_r
     
-    // output display.
 );
     
     // TODO: instance of array available?
@@ -78,8 +78,8 @@ module Game_TOP(
     reg [3:0] finish_stage, next_finish_stage;
     reg [6:0] top_point, next_top_point;
     reg [6:0] bottom_point, next_bottom_point;
-    // TODO: is_top
     reg is_top, next_is_top;
+    
     
     reg hit;
     parameter STRIKE = 3'd0;
@@ -97,18 +97,25 @@ module Game_TOP(
     reg [2:0] base, next_base;
     
     reg s_count, next_s_count;
-    wire finish;
+    wire finish, half_finish;
     
     reg [3:0] state, next_state;
     
     // FIXME:
-    assign LED[1:0] = out;
-    assign LED[3:2] = strike;
-    assign LED[6:4] = base;
-    
     assign LED[15:12] = state;
-    assign LED[7] = is_top;
     assign LED[11:8] = game_stage;
+    assign LED[7] = is_top;
+    assign LED[6:4] = base;
+    assign LED[3:2] = strike;
+    assign LED[1:0] = out;
+    
+    reg [31:0] data;
+    wire [31:0] next_data;
+    reg [7:0] seg[3:0];
+    
+    SevenSegment S1(.display(display), .digit(digit), .input_nums(data), .clk(clk), .rst(op_rst));
+    
+    assign next_data = {seg[3], seg[2], seg[1], seg[0]};
     
     always @(posedge clk) begin
         if (op_rst) begin
@@ -118,6 +125,9 @@ module Game_TOP(
             finish_stage <= 4'd3;
             strike <= 2'b0;
             out <= 2'b0;
+            base <= 3'b0;
+            top_point <= 7'b0;
+            bottom_point <= 7'b0;
             s_count <= 1'b0;
             result <= VOID;
             is_top <= 1'b0;
@@ -129,11 +139,35 @@ module Game_TOP(
             finish_stage <= next_finish_stage;
             strike <= next_strike;
             out <= next_out;
+            base <= next_base;
+            top_point <= next_top_point;
+            bottom_point <= next_bottom_point;
             s_count <= next_s_count;
             result <= next_result;
             is_top <= next_is_top;
         end
     end
+    
+    wire [7:0] gs_num;
+    convert_num c1(.in(game_stage), .point(~is_top), .out(gs_num));    // 4, 1, 8 bits
+    
+    wire [7:0] ss_num;
+    convert_num c2(.in(select_stage), .point(1'b0), .out(ss_num));
+    
+    
+    wire [6:0] top_player_ten, top_player_one;
+    wire [7:0] top_lnum, top_rnum;
+    assign top_player_ten = top_point / 7'd10 % 7'd10;
+    assign top_player_one = top_point % 7'd10;
+    convert_num c3(.in(top_player_ten[3:0]), .point(1'b0), .out(top_lnum));
+    convert_num c4(.in(top_player_one[3:0]), .point(is_top), .out(top_rnum));
+    
+    wire [6:0] bottom_player_ten, bottom_player_one;
+    wire [7:0] bottom_lnum, bottom_rnum;
+    assign bottom_player_ten = bottom_point / 7'd10 % 7'd10;
+    assign bottom_player_one = bottom_point % 7'd10;
+    convert_num c5(.in(bottom_player_ten[3:0]), .point(1'b0), .out(bottom_lnum));
+    convert_num c6(.in(bottom_player_one[3:0]), .point(~is_top), .out(bottom_rnum));
     
     always @(*) begin
         
@@ -157,6 +191,7 @@ module Game_TOP(
         
         next_state = state;
         next_game_stage = game_stage;
+        next_is_top = is_top;
         next_finish_stage = finish_stage;
         next_strike = strike;
         next_out = out;
@@ -167,6 +202,10 @@ module Game_TOP(
         hit = |op_hit_signal;
         next_result = result;
         record_hit_finish = (result != VOID);
+        seg[3] = 8'b0;
+        seg[2] = 8'b0;
+        seg[1] = 8'b0;
+        seg[0] = 8'b0;
         
         // TODO: next_state
         case (state)
@@ -179,13 +218,19 @@ module Game_TOP(
                 next_base = 3'b0;
                 next_is_top = (op_BTNC ? 1'b1 : 1'b0);
                 next_game_stage = 4'd1;
+                
+                seg[3] = 8'b00010000;
+                seg[2] = 8'b00010000;
+                seg[1] = 8'b11101110;
+                seg[0] = ss_num;
+                
             end
             
             waiting_hit_signal: begin
                 next_state = (record_hit_finish && finish) ? waiting_reset : waiting_hit_signal;
                 next_s_count = hit ? 1'b1 : s_count;
                 
-                if (record_hit_finish) begin
+                if (record_hit_finish && finish) begin
                     case (result)
                         STRIKE: begin
                             if (strike == 2'd2) begin
@@ -261,7 +306,7 @@ module Game_TOP(
                     end
                     else begin
                         if (op_BTND) begin
-                            case (switch[15:10])
+                            case (switch[5:0])
                                 6'b100000: next_result = STRIKE;
                                 6'b010000: next_result = B1;
                                 6'b001000: next_result = B2;
@@ -281,11 +326,76 @@ module Game_TOP(
                 end
                 
                 
+                if (result == VOID) begin
+                    seg[3] = 8'b00010000;
+                    seg[2] = 8'b00010000;
+                    seg[1] = 8'b00010000;
+                    seg[0] = 8'b00010000;
+                end
+                else begin
+                    
+                    seg[3] = 8'b00010000;
+                    seg[2] = 8'b00010000;
+                    seg[1] = 8'b00010000;
+                    seg[0] = 8'b00010000;
+                    
+                    case (result)
+                        STRIKE: begin
+                            seg[0] = 8'b11010110;
+                        end
+                        
+                        B1: begin
+                            seg[1] = 8'b00100100;
+                            seg[0] = 8'b01011110;
+                        end
+                        
+                        B2: begin
+                            seg[1] = 8'b11010110;
+                            seg[0] = 8'b01011110;
+                        end
+                        
+                        B3: begin
+                            seg[1] = 8'b10110110;
+                            seg[0] = 8'b01011110;
+                        end
+                        
+                        OUT: begin
+                            seg[2] = 8'b00011110;
+                            seg[1] = 8'b00001110;
+                            seg[0] = 8'b01011000;
+                        end
+                        
+                        HR: begin
+                            seg[1] = 8'b01111100;
+                            seg[0] = 8'b00011000;
+                        end
+                        
+                        default: begin
+                            seg[2] = 8'b11011010;
+                            seg[1] = 8'b00011000;
+                            seg[0] = 8'b00011000;
+                        end
+                    endcase
+                end
+                
             end
             
             waiting_reset: begin
                 next_state = (out == 2'd3 ? clear : (op_BTNC ? waiting_hit_signal : waiting_reset));
                 next_result = VOID;
+                
+                if (switch[6]) begin
+                    seg[3] = top_lnum;
+                    seg[2] = top_rnum;
+                    seg[1] = bottom_lnum;
+                    seg[0] = bottom_rnum;
+                end
+                else begin
+                    seg[3] = {strike != 2'b0, 2'b0, out != 2'b0, 2'b0, base[2], 1'b0};
+                    seg[2] = {strike[1], 2'b0, out[1], 2'b0, base[1], 1'b0};
+                    seg[1] = {6'b0, base[0], 1'b0};
+                    seg[0] = gs_num;
+                end
             end
             
             // TODO: finish.
@@ -301,7 +411,12 @@ module Game_TOP(
                 next_out = finish ? 2'b0 : out;
                 next_base = finish ? 3'b0 : base;
                 next_game_stage = !is_top ? game_stage + 4'b1 : game_stage;
-                next_is_top = finish ? ~is_top : is_top;
+                next_is_top = half_finish ? ~is_top : is_top;
+                
+                seg[3] = top_lnum;
+                seg[2] = top_rnum;
+                seg[1] = bottom_lnum;
+                seg[0] = bottom_rnum;
                 
             end
             
@@ -321,9 +436,9 @@ module Game_TOP(
     // wire [1:0] eng_en;  // left, right.
     // wire [1:0] eng_l;
     // wire [1:0] eng_r;
-    engine E(clk, pitch, eng_en, eng_l, eng_r);
+    // engine E(clk, pitch, eng_en, eng_l, eng_r);
     
-    counter C(clk, s_count, finish);
+    counter C(clk, s_count, finish, half_finish);
     
 endmodule
 
@@ -337,20 +452,21 @@ module engine(clk, trigger, en, l, r);
     assign r = 2'b00;
 endmodule
 
-module counter(clk, in, out);
+module counter(clk, in, out, half);
 
     input clk, in;
-    output out;
+    output out, half;
     
     reg [28:0] count;
     
     always @(posedge clk) begin
         if (!in)
-            count <= count;
+            count <= 29'b0;
         else
             count <= count + 29'b1;
     end
     
+    assign half = (count == 29'b0_1000_0000_0000_0000_0000_0000_0000);
     assign out = count[28];
     
 endmodule
@@ -382,4 +498,38 @@ module onepulse(clk, in, out);
         out <= (~delay) && in;
     end
     
+endmodule
+
+module convert_num(in, point, out);
+    input [3:0] in;
+    input point;
+    output reg [7:0] out;
+    
+    always @(*) begin
+        
+        case ({point, in})
+            5'd0: out = 8'b11101110;
+            5'd1: out = 8'b00100100;
+            5'd2: out = 8'b10111010;
+            5'd3: out = 8'b10110110;
+            5'd4: out = 8'b01110100;
+            5'd5: out = 8'b11010110;
+            5'd6: out = 8'b11011110;
+            5'd7: out = 8'b10100100;
+            5'd8: out = 8'b11111110;
+            5'd9: out = 8'b11110110;
+            
+            5'd16: out = 8'b11101111;
+            5'd17: out = 8'b00100101;
+            5'd18: out = 8'b10111011;
+            5'd19: out = 8'b10111011;
+            5'd20: out = 8'b01110101;
+            5'd21: out = 8'b10100101;
+            5'd22: out = 8'b10100101;
+            5'd23: out = 8'b10100101;
+            5'd24: out = 8'b11111111;
+            5'd25: out = 8'b11110111;
+        endcase
+    
+    end
 endmodule

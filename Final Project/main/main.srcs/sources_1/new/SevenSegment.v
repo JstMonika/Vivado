@@ -23,18 +23,14 @@
 module SevenSegment(
 	output reg [7:0] display,
 	output reg [3:0] digit,		
-	output [15:0] LED,		// output LED.
 	
 	input wire [31:0] input_nums,		// input Segment
-	input wire [15:0] signal,	// input LED.
 	
 	input wire rst,
 	input wire clk
     );
     
 	wire [31:0] nums = ~input_nums;
-	
-	assign LED = signal;
 	
     reg [15:0] clk_divider;
     

@@ -70,6 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
@@ -84,7 +85,10 @@ set_property ip_output_repo {e:/Code/Vivado/Final Project/main/main.cache/ip} [c
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_verilog -library xil_defaultlib {{E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/Game_TOP.v}}
+read_verilog -library xil_defaultlib {
+  {E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/SevenSegment.v}
+  {E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/Game_TOP.v}
+}
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -94,6 +98,9 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
+read_xdc {{E:/Code/Vivado/Final Project/main/main.srcs/constrs_1/new/yccc.xdc}}
+set_property used_in_implementation false [get_files {{E:/Code/Vivado/Final Project/main/main.srcs/constrs_1/new/yccc.xdc}}]
+
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 
