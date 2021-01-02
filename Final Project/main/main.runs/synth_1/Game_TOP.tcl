@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "E:/Code/Vivado/Final Project/main/main.runs/synth_1/test.tcl"
+  variable script "E:/Code/Vivado/Final Project/main/main.runs/synth_1/Game_TOP.tcl"
   variable category "vivado_synth"
 }
 
@@ -84,7 +84,7 @@ set_property ip_output_repo {e:/Code/Vivado/Final Project/main/main.cache/ip} [c
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_verilog -library xil_defaultlib {{E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/test.v}}
+read_verilog -library xil_defaultlib {{E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/Game_TOP.v}}
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -98,17 +98,17 @@ set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top test -part xc7a35tcpg236-1
+synth_design -top Game_TOP -part xc7a35tcpg236-1
 OPTRACE "synth_design" END { }
 
 
 OPTRACE "write_checkpoint" START { CHECKPOINT }
 # disable binary constraint mode for synth run checkpoints
 set_param constraints.enableBinaryConstraints false
-write_checkpoint -force -noxdef test.dcp
+write_checkpoint -force -noxdef Game_TOP.dcp
 OPTRACE "write_checkpoint" END { }
 OPTRACE "synth reports" START { REPORT }
-create_report "synth_1_synth_report_utilization_0" "report_utilization -file test_utilization_synth.rpt -pb test_utilization_synth.pb"
+create_report "synth_1_synth_report_utilization_0" "report_utilization -file Game_TOP_utilization_synth.rpt -pb Game_TOP_utilization_synth.pb"
 OPTRACE "synth reports" END { }
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]

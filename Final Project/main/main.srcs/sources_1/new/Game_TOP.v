@@ -41,27 +41,27 @@ module Game_TOP(
 );
     
     // TODO: instance of array available?
-    reg de_rst, op_rst;
+    wire de_rst, op_rst;
     debounce drst(clk, rst, de_rst);
     onepulse orst(clk, de_rst, op_rst);
     
-    reg [7:0] de_hit_signal, op_hit_signal;
+    wire [7:0] de_hit_signal, op_hit_signal;
     debounce dhs [7:0] (clk, hit_signal, de_hit_signal);
     onepulse ohs [7:0] (clk, de_hit_signal, op_hit_signal);
     
-    reg de_BTNC, op_BTNC;
+    wire de_BTNC, op_BTNC;
     debounce dbtnc(clk, BTNC, de_BTNC);
     onepulse obtnc(clk, de_BTNC, op_BTNC);
     
-    reg de_BTNL, op_BTNL;
+    wire de_BTNL, op_BTNL;
     debounce dbtnl(clk, BTNL, de_BTNL);
     onepulse obtnl(clk, de_BTNL, op_BTNL);
     
-    reg de_BTNR, op_BTNR;
+    wire de_BTNR, op_BTNR;
     debounce dbtnr(clk, BTNR, de_BTNR);
     onepulse obtnr(clk, de_BTNR, op_BTNR);
     
-    reg de_BTND, op_BTND;
+    wire de_BTND, op_BTND;
     debounce dbtnd(clk, BTND, de_BTND);
     onepulse obtnd(clk, de_BTND, op_BTND);
     
@@ -97,9 +97,18 @@ module Game_TOP(
     reg [2:0] base, next_base;
     
     reg s_count, next_s_count;
-    reg finish;
+    wire finish;
     
     reg [3:0] state, next_state;
+    
+    // FIXME:
+    assign LED[1:0] = out;
+    assign LED[3:2] = strike;
+    assign LED[6:4] = base;
+    
+    assign LED[15:12] = state;
+    assign LED[7] = is_top;
+    assign LED[11:8] = game_stage;
     
     always @(posedge clk) begin
         if (op_rst) begin
@@ -260,7 +269,7 @@ module Game_TOP(
                                 6'b000010: next_result = OUT;
                                 6'b000001: next_result = HR;
                                 default: next_result = VOID;
-                            endcase4
+                            endcase
                         end
                         else begin
                             next_result = result;
@@ -281,7 +290,6 @@ module Game_TOP(
             
             // TODO: finish.
             clear: begin
-                
                 next_s_count = finish ? 1'b0 : 1'b1;
                 
                 if (finish)
@@ -308,13 +316,25 @@ module Game_TOP(
     
     // TODO: turn on engine.
     wire pitch = (state == waiting_reset) && op_BTNC;
-    wire [1:0] eng_en;  // left, right.
-    wire [1:0] eng_l;
-    wire [1:0] eng_r;
+    
+    // FIXME:
+    // wire [1:0] eng_en;  // left, right.
+    // wire [1:0] eng_l;
+    // wire [1:0] eng_r;
     engine E(clk, pitch, eng_en, eng_l, eng_r);
     
     counter C(clk, s_count, finish);
     
+endmodule
+
+// FIXME:
+module engine(clk, trigger, en, l, r);
+    input clk, trigger;
+    output [1:0] en, l, r;
+    
+    assign en = 2'b00;
+    assign l = 2'b00;
+    assign r = 2'b00;
 endmodule
 
 module counter(clk, in, out);
