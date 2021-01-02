@@ -131,6 +131,7 @@ module Game_TOP(
             s_count <= 1'b0;
             result <= VOID;
             is_top <= 1'b0;
+            data <= 32'b0;
         end
         else begin
             state <= next_state;
@@ -145,6 +146,7 @@ module Game_TOP(
             s_count <= next_s_count;
             result <= next_result;
             is_top <= next_is_top;
+            data <= next_data;
         end
     end
     
@@ -171,7 +173,7 @@ module Game_TOP(
     
     always @(*) begin
         
-        case ({BTNL, BTNR})
+        case ({op_BTNL, op_BTNR})
             2'b10: begin
                 if (select_stage == 4'd1)
                     next_select_stage = 4'd9;
@@ -228,7 +230,7 @@ module Game_TOP(
             
             waiting_hit_signal: begin
                 next_state = (record_hit_finish && finish) ? waiting_reset : waiting_hit_signal;
-                next_s_count = hit ? 1'b1 : s_count;
+                next_s_count = (result != VOID) ? 1'b1 : s_count;
                 
                 if (record_hit_finish && finish) begin
                     case (result)
@@ -244,6 +246,7 @@ module Game_TOP(
                         end
                         
                         B1: begin
+                            next_strike = 2'b0;
                             next_base = {base[1:0], 1'b1};
                             
                             if (is_top) begin
@@ -255,6 +258,7 @@ module Game_TOP(
                         end
                         
                         B2: begin
+                            next_strike = 2'b0;
                             next_base = {base[0], 2'b10};
                             
                             if (is_top) begin
@@ -266,6 +270,7 @@ module Game_TOP(
                         end
                         
                         B3: begin
+                            next_strike = 2'b0;
                             next_base = 3'b100;
                             
                             if (is_top) begin
@@ -277,7 +282,21 @@ module Game_TOP(
                         end
                         
                         OUT: begin
+                            next_strike = 2'b0;
                             next_out = out + 2'b1;
+                        end
+                        
+                        HR: begin
+                            next_strike = 2'b0;
+                            next_base = 3'b000;
+                            
+                            if (is_top) begin
+                                next_top_point = top_point + base[2] + base[1] + base[0] + 7'b1;
+                            end
+                            else begin
+                                next_bottom_point = bottom_point + base[2] + base[1] + base[0] + 7'b1;
+                            end
+                            
                         end
                         /*
                         default: begin
@@ -350,7 +369,7 @@ module Game_TOP(
                         end
                         
                         B2: begin
-                            seg[1] = 8'b11010110;
+                            seg[1] = 8'b10111010;
                             seg[0] = 8'b01011110;
                         end
                         
@@ -400,7 +419,7 @@ module Game_TOP(
             
             // TODO: finish.
             clear: begin
-                next_s_count = finish ? 1'b0 : 1'b1;
+                next_s_count = 1'b1;
                 
                 if (finish)
                     next_state = (game_stage == finish_stage && is_top == 1'b0) ? DONE : waiting_reset;
@@ -411,6 +430,8 @@ module Game_TOP(
                 next_out = finish ? 2'b0 : out;
                 next_base = finish ? 3'b0 : base;
                 next_game_stage = !is_top ? game_stage + 4'b1 : game_stage;
+                
+                // IMPORTANT: failed.
                 next_is_top = half_finish ? ~is_top : is_top;
                 
                 seg[3] = top_lnum;

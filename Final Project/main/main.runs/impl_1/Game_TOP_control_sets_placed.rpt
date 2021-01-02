@@ -1,0 +1,90 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
+| Date         : Sun Jan  3 06:49:29 2021
+| Host         : Ori-PC running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file Game_TOP_control_sets_placed.rpt
+| Design       : Game_TOP
+| Device       : xc7a35t
+-------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    12 |
+|    Minimum number of control sets                        |    12 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    35 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    12 |
+| >= 0 to < 4        |     0 |
+| >= 4 to < 6        |     3 |
+| >= 6 to < 8        |     4 |
+| >= 8 to < 10       |     1 |
+| >= 10 to < 12      |     1 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     3 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |             171 |           43 |
+| No           | No                    | Yes                    |              27 |            9 |
+| No           | Yes                   | No                     |              71 |           27 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |              32 |           14 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++---------------------------+-----------------+------------------+------------------+----------------+--------------+
+|        Clock Signal       |  Enable Signal  | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
++---------------------------+-----------------+------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG            | game_stage      | orst/SR[0]       |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG            | obtnc/E[0]      | orst/SR[0]       |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG            | obtnr/E[0]      | orst/SR[0]       |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG            | next_state      | orst/SR[0]       |                4 |              6 |         1.50 |
+|  clk_IBUF_BUFG            | C/is_top_reg[0] | orst/SR[0]       |                3 |              7 |         2.33 |
+|  clk_IBUF_BUFG            | C/E[0]          | orst/SR[0]       |                4 |              7 |         1.75 |
+|  c2/out_reg[7]_i_1_n_0    |                 |                  |                2 |              7 |         3.50 |
+|  c1/out_reg[7]_i_1__0_n_0 |                 |                  |                2 |              8 |         4.00 |
+|  S1/clk_divider_reg[15]   |                 | orst/SR[0]       |                5 |             11 |         2.20 |
+|  clk_IBUF_BUFG            |                 | C/clear          |                8 |             29 |         3.62 |
+|  clk_IBUF_BUFG            |                 | orst/SR[0]       |               23 |             58 |         2.52 |
+|  clk_IBUF_BUFG            |                 |                  |               39 |            156 |         4.00 |
++---------------------------+-----------------+------------------+------------------+----------------+--------------+
+
+
