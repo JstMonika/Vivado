@@ -39,7 +39,6 @@ module Game_TOP(
     // output [1:0] eng_r
     
 );
-    
     // TODO: instance of array available?
     wire de_rst, op_rst;
     debounce drst(clk, rst, de_rst);
@@ -76,8 +75,10 @@ module Game_TOP(
     reg [3:0] game_stage, next_game_stage;    // 1st ~ 9th.
     reg [3:0] select_stage, next_select_stage;
     reg [3:0] finish_stage, next_finish_stage;
-    reg [6:0] top_point, next_top_point;
-    reg [6:0] bottom_point, next_bottom_point;
+    reg [3:0] top_point_l, next_top_point_l;
+    reg [3:0] top_point_r, next_top_point_r;
+    reg [3:0] bottom_point_l, next_bottom_point_l;
+    reg [3:0] bottom_point_r, next_bottom_point_r;
     reg is_top, next_is_top;
     
     
@@ -98,16 +99,9 @@ module Game_TOP(
     
     reg s_count, next_s_count;
     wire finish, half_finish;
+    wire in_clear, out_clear, half_out_clear;
     
     reg [3:0] state, next_state;
-    
-    // FIXME:
-    assign LED[15:12] = state;
-    assign LED[11:8] = game_stage;
-    assign LED[7] = is_top;
-    assign LED[6:4] = base;
-    assign LED[3:2] = strike;
-    assign LED[1:0] = out;
     
     reg [31:0] data;
     wire [31:0] next_data;
@@ -121,13 +115,15 @@ module Game_TOP(
         if (op_rst) begin
             state <= IDLE;
             game_stage <= 4'b0;
-            select_stage <= 4'b0;
+            select_stage <= 4'd1;
             finish_stage <= 4'd3;
             strike <= 2'b0;
             out <= 2'b0;
             base <= 3'b0;
-            top_point <= 7'b0;
-            bottom_point <= 7'b0;
+            top_point_l <= 4'b0;
+            top_point_r <= 4'b0;
+            bottom_point_l <= 4'b0;
+            bottom_point_r <= 4'b0;
             s_count <= 1'b0;
             result <= VOID;
             is_top <= 1'b0;
@@ -141,8 +137,10 @@ module Game_TOP(
             strike <= next_strike;
             out <= next_out;
             base <= next_base;
-            top_point <= next_top_point;
-            bottom_point <= next_bottom_point;
+            top_point_l <= next_top_point_l;
+            top_point_r <= next_top_point_r;
+            bottom_point_l <= next_bottom_point_l;
+            bottom_point_r <= next_bottom_point_r;
             s_count <= next_s_count;
             result <= next_result;
             is_top <= next_is_top;
@@ -157,19 +155,15 @@ module Game_TOP(
     convert_num c2(.in(select_stage), .point(1'b0), .out(ss_num));
     
     
-    wire [6:0] top_player_ten, top_player_one;
     wire [7:0] top_lnum, top_rnum;
-    assign top_player_ten = top_point / 7'd10 % 7'd10;
-    assign top_player_one = top_point % 7'd10;
-    convert_num c3(.in(top_player_ten[3:0]), .point(1'b0), .out(top_lnum));
-    convert_num c4(.in(top_player_one[3:0]), .point(is_top), .out(top_rnum));
+    convert_num c3(.in(top_point_l), .point(1'b0), .out(top_lnum));
+    convert_num c4(.in(top_point_r), .point(is_top), .out(top_rnum));
     
-    wire [6:0] bottom_player_ten, bottom_player_one;
     wire [7:0] bottom_lnum, bottom_rnum;
-    assign bottom_player_ten = bottom_point / 7'd10 % 7'd10;
-    assign bottom_player_one = bottom_point % 7'd10;
-    convert_num c5(.in(bottom_player_ten[3:0]), .point(1'b0), .out(bottom_lnum));
-    convert_num c6(.in(bottom_player_one[3:0]), .point(~is_top), .out(bottom_rnum));
+    convert_num c5(.in(bottom_point_l), .point(1'b0), .out(bottom_lnum));
+    convert_num c6(.in(bottom_point_r), .point(~is_top), .out(bottom_rnum));
+    
+    assign in_clear = (state == clear);
     
     always @(*) begin
         
@@ -198,18 +192,20 @@ module Game_TOP(
         next_strike = strike;
         next_out = out;
         next_base = base;
-        next_top_point = top_point;
-        next_bottom_point = bottom_point;
+        next_top_point_l = top_point_l;
+        next_top_point_r = top_point_r;
+        next_bottom_point_l = bottom_point_l;
+        next_bottom_point_r = bottom_point_r;
         next_s_count = 1'b0;
         hit = |op_hit_signal;
         next_result = result;
         record_hit_finish = (result != VOID);
+        
         seg[3] = 8'b0;
         seg[2] = 8'b0;
         seg[1] = 8'b0;
         seg[0] = 8'b0;
         
-        // TODO: next_state
         case (state)
             IDLE: begin
                 next_state = (op_BTNC ? waiting_reset : IDLE);
@@ -221,6 +217,11 @@ module Game_TOP(
                 next_is_top = (op_BTNC ? 1'b1 : 1'b0);
                 next_game_stage = 4'd1;
                 
+                next_top_point_l = 4'b0;
+                next_top_point_r = 4'b0;
+                next_bottom_point_l = 4'b0;
+                next_bottom_point_r = 4'b0;
+                
                 seg[3] = 8'b00010000;
                 seg[2] = 8'b00010000;
                 seg[1] = 8'b11101110;
@@ -230,7 +231,7 @@ module Game_TOP(
             
             waiting_hit_signal: begin
                 next_state = (record_hit_finish && finish) ? waiting_reset : waiting_hit_signal;
-                next_s_count = (result != VOID) ? 1'b1 : s_count;
+                next_s_count = finish ? 1'b0 : ((result != VOID) ? 1'b1 : s_count);
                 
                 if (record_hit_finish && finish) begin
                     case (result)
@@ -250,11 +251,27 @@ module Game_TOP(
                             next_base = {base[1:0], 1'b1};
                             
                             if (is_top) begin
-                                next_top_point = top_point + base[2];
+                                
+                                if (top_point_r + base[2] > 4'd9) begin
+                                    next_top_point_l = (top_point_l == 4'd9 ? 4'd0 : top_point_l + 4'd1);
+                                    next_top_point_r = top_point_r + base[2] - 4'd10;
+                                end
+                                else begin
+                                    next_top_point_r = top_point_r + base[2];
+                                end
+                                
                             end
                             else begin
-                                next_bottom_point = bottom_point + base[2];
+                                
+                                if (bottom_point_r + base[2] > 4'd9) begin
+                                    next_bottom_point_l = (bottom_point_l == 4'd9 ? 4'd0 : bottom_point_l + 4'd1);
+                                    next_bottom_point_r = bottom_point_r + base[2] - 4'd10;
+                                end
+                                else begin
+                                    next_bottom_point_r = bottom_point_r + base[2];
+                                end
                             end
+                            
                         end
                         
                         B2: begin
@@ -262,11 +279,27 @@ module Game_TOP(
                             next_base = {base[0], 2'b10};
                             
                             if (is_top) begin
-                                next_top_point = top_point + base[2] + base[1];
+                                
+                                if (top_point_r + base[2] + base[1] > 4'd9) begin
+                                    next_top_point_l = (top_point_l == 4'd9 ? 4'd0 : top_point_l + 4'd1);
+                                    next_top_point_r = top_point_r + base[2] + base[1] - 4'd10;
+                                end
+                                else begin
+                                    next_top_point_r = top_point_r + base[2] + base[1];
+                                end
+                                
                             end
                             else begin
-                                next_bottom_point = bottom_point + base[2] + base[1];
+                                
+                                if (bottom_point_r + base[2] + base[1] > 4'd9) begin
+                                    next_bottom_point_l = (bottom_point_l == 4'd9 ? 4'd0 : bottom_point_l + 4'd1);
+                                    next_bottom_point_r = bottom_point_r + base[2] + base[1] - 4'd10;
+                                end
+                                else begin
+                                    next_bottom_point_r = bottom_point_r + base[2] + base[1];
+                                end
                             end
+                            
                         end
                         
                         B3: begin
@@ -274,10 +307,25 @@ module Game_TOP(
                             next_base = 3'b100;
                             
                             if (is_top) begin
-                                next_top_point = top_point + base[2] + base[1] + base[0];
+                                
+                                if (top_point_r + base[2] + base[1] + base[0] > 4'd9) begin
+                                    next_top_point_l = (top_point_l == 4'd9 ? 4'd0 : top_point_l + 4'd1);
+                                    next_top_point_r = top_point_r + base[2] + base[1] + base[0] - 4'd10;
+                                end
+                                else begin
+                                    next_top_point_r = top_point_r + base[2] + base[1] + base[0];
+                                end
+                                
                             end
                             else begin
-                                next_bottom_point = bottom_point + base[2] + base[1] + base[0];
+                                
+                                if (bottom_point_r + base[2] + base[1] + base[0] > 4'd9) begin
+                                    next_bottom_point_l = (bottom_point_l == 4'd9 ? 4'd0 : bottom_point_l + 4'd1);
+                                    next_bottom_point_r = bottom_point_r + base[2] + base[1] + base[0] - 4'd10;
+                                end
+                                else begin
+                                    next_bottom_point_r = bottom_point_r + base[2] + base[1] + base[0];
+                                end
                             end
                         end
                         
@@ -291,10 +339,25 @@ module Game_TOP(
                             next_base = 3'b000;
                             
                             if (is_top) begin
-                                next_top_point = top_point + base[2] + base[1] + base[0] + 7'b1;
+                                
+                                if (top_point_r + base[2] + base[1] + base[0] + 4'd1 > 4'd9) begin
+                                    next_top_point_l = (top_point_l == 4'd9 ? 4'd0 : top_point_l + 4'd1);
+                                    next_top_point_r = top_point_r + base[2] + base[1] + base[0] + 4'd1 - 4'd10;
+                                end
+                                else begin
+                                    next_top_point_r = top_point_r + base[2] + base[1] + base[0] + 4'd1;
+                                end
+                                
                             end
                             else begin
-                                next_bottom_point = bottom_point + base[2] + base[1] + base[0] + 7'b1;
+                                
+                                if (bottom_point_r + base[2] + base[1] + base[0] + 4'd1 > 4'd9) begin
+                                    next_bottom_point_l = (bottom_point_l == 4'd9 ? 4'd0 : bottom_point_l + 4'd1);
+                                    next_bottom_point_r = bottom_point_r + base[2] + base[1] + base[0] + 4'd1 - 4'd10;
+                                end
+                                else begin
+                                    next_bottom_point_r = bottom_point_r + base[2] + base[1] + base[0] + 4'd1;
+                                end
                             end
                             
                         end
@@ -419,20 +482,18 @@ module Game_TOP(
             
             // TODO: finish.
             clear: begin
-                next_s_count = 1'b1;
                 
-                if (finish)
-                    next_state = (game_stage == finish_stage && is_top == 1'b0) ? DONE : waiting_reset;
+                if (out_clear)
+                    next_state = (game_stage > finish_stage) ? DONE : waiting_reset;
                 else
                     next_state = clear;
                     
-                next_strike = finish ? 2'b0 : strike;
-                next_out = finish ? 2'b0 : out;
-                next_base = finish ? 3'b0 : base;
-                next_game_stage = !is_top ? game_stage + 4'b1 : game_stage;
+                next_strike = out_clear ? 2'b0 : strike;
+                next_out = out_clear ? 2'b0 : out;
+                next_base = out_clear ? 3'b0 : base;
                 
-                // IMPORTANT: failed.
-                next_is_top = half_finish ? ~is_top : is_top;
+                next_game_stage = half_out_clear ? (!is_top ? game_stage + 4'b1 : game_stage) : game_stage;
+                next_is_top = half_out_clear ? ~is_top : is_top;
                 
                 seg[3] = top_lnum;
                 seg[2] = top_rnum;
@@ -443,7 +504,32 @@ module Game_TOP(
             
             // TODO: done.
             DONE: begin
-                next_state = IDLE;
+                
+                next_s_count = 1'b1;
+                
+                next_state = (finish ? IDLE : DONE);
+                
+                if ({top_point_l, top_point_r} > {bottom_point_l, bottom_point_r}) begin
+                    seg[3] = top_lnum;
+                    seg[2] = top_rnum;
+                    seg[1] = 8'b00010000;
+                    seg[0] = 8'b00010000;
+                end
+                
+                else if ({top_point_l, top_point_r} < {bottom_point_l, bottom_point_r}) begin
+                    seg[3] = 8'b00010000;
+                    seg[2] = 8'b00010000;
+                    seg[1] = bottom_lnum;
+                    seg[0] = bottom_rnum;
+                end
+                
+                else begin
+                    seg[3] = top_lnum;
+                    seg[2] = top_rnum;
+                    seg[1] = bottom_lnum;
+                    seg[0] = bottom_rnum;
+                end
+                
             end
             
         endcase
@@ -460,6 +546,7 @@ module Game_TOP(
     // engine E(clk, pitch, eng_en, eng_l, eng_r);
     
     counter C(clk, s_count, finish, half_finish);
+    counter C2(clk, in_clear, out_clear, half_out_clear);
     
 endmodule
 
@@ -521,6 +608,7 @@ module onepulse(clk, in, out);
     
 endmodule
 
+// IMPORTANT: need to fix it.
 module convert_num(in, point, out);
     input [3:0] in;
     input point;
@@ -543,10 +631,10 @@ module convert_num(in, point, out);
             5'd16: out = 8'b11101111;
             5'd17: out = 8'b00100101;
             5'd18: out = 8'b10111011;
-            5'd19: out = 8'b10111011;
+            5'd19: out = 8'b10110111;
             5'd20: out = 8'b01110101;
-            5'd21: out = 8'b10100101;
-            5'd22: out = 8'b10100101;
+            5'd21: out = 8'b11010111;
+            5'd22: out = 8'b11011111;
             5'd23: out = 8'b10100101;
             5'd24: out = 8'b11111111;
             5'd25: out = 8'b11110111;
