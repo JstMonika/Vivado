@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date             : Sun Jan  3 22:17:57 2021
+| Date             : Sun Jan 10 19:11:38 2021
 | Host             : Ori-PC running 64-bit major release  (build 9200)
 | Command          : report_power -file Game_TOP_power_routed.rpt -pb Game_TOP_power_summary_routed.pb -rpx Game_TOP_power_routed.rpx
 | Design           : Game_TOP
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+----------------------------------+
-| Total On-Chip Power (W)  | 22.511 (Junction temp exceeded!) |
+| Total On-Chip Power (W)  | 28.327 (Junction temp exceeded!) |
 | Design Power Budget (W)  | Unspecified*                     |
 | Power Budget Margin (W)  | NA                               |
-| Dynamic (W)              | 22.025                           |
+| Dynamic (W)              | 27.841                           |
 | Device Static (W)        | 0.486                            |
 | Effective TJA (C/W)      | 5.0                              |
 | Max Ambient (C)          | 0.0                              |
@@ -52,16 +52,17 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.549 |      827 |       --- |             --- |
-|   LUT as Logic |     0.448 |      300 |     20800 |            1.44 |
-|   Register     |     0.055 |      359 |     41600 |            0.86 |
-|   CARRY4       |     0.040 |       22 |      8150 |            0.27 |
+| Slice Logic    |     0.587 |     1028 |       --- |             --- |
+|   LUT as Logic |     0.466 |      376 |     20800 |            1.81 |
+|   Register     |     0.058 |      433 |     41600 |            1.04 |
+|   CARRY4       |     0.057 |       46 |      8150 |            0.56 |
 |   BUFG         |     0.006 |        1 |        32 |            3.13 |
-|   Others       |     0.000 |       72 |       --- |             --- |
-| Signals        |     0.796 |      639 |       --- |             --- |
-| I/O            |    20.680 |       49 |       106 |           46.23 |
+|   Others       |     0.000 |       81 |       --- |             --- |
+| Signals        |     0.871 |      766 |       --- |             --- |
+| DSPs           |     0.083 |        1 |        90 |            1.11 |
+| I/O            |    26.301 |       55 |       106 |           51.89 |
 | Static Power   |     0.486 |          |           |                 |
-| Total          |    22.511 |          |           |                 |
+| Total          |    28.327 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,9 +72,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     1.770 |       1.429 |      0.341 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.808 |       0.755 |      0.053 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     5.831 |       5.830 |      0.001 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     1.965 |       1.624 |      0.341 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     1.014 |       0.961 |      0.053 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     7.421 |       7.420 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -135,41 +136,43 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+----------+-----------+
-| Name     | Power (W) |
-+----------+-----------+
-| Game_TOP |    22.025 |
-|   C      |     0.038 |
-|   c1     |     0.009 |
-|   S1     |     0.414 |
-|   C2     |     0.034 |
-|   c2     |     0.002 |
-|   c3     |     0.010 |
-|   c4     |     0.011 |
-|   c5     |     0.016 |
-|   c6     |     0.011 |
-|   dbtnc  |     0.034 |
-|   dbtnd  |     0.033 |
-|   dbtnl  |     0.033 |
-|   dbtnr  |     0.030 |
-|   dhs[0] |     0.032 |
-|   dhs[1] |     0.034 |
-|   dhs[2] |     0.029 |
-|   dhs[3] |     0.029 |
-|   dhs[4] |     0.030 |
-|   dhs[5] |     0.032 |
-|   dhs[6] |     0.030 |
-|   dhs[7] |     0.031 |
-|   drst   |     0.033 |
-|   obtnc  |     0.006 |
-|   obtnd  |     0.004 |
-|   ohs[0] |     0.003 |
-|   ohs[1] |     0.003 |
-|   ohs[2] |     0.001 |
-|   ohs[3] |     0.004 |
-|   ohs[4] |     0.003 |
-|   ohs[6] |     0.016 |
-|   ohs[7] |     0.001 |
-+----------+-----------+
++-------------+-----------+
+| Name        | Power (W) |
++-------------+-----------+
+| Game_TOP    |    27.841 |
+|   C         |     0.024 |
+|   c1        |     0.006 |
+|   S1        |     0.444 |
+|   C2        |     0.030 |
+|   c2        |     0.001 |
+|   c3        |     0.016 |
+|   c4        |     0.010 |
+|   c5        |     0.013 |
+|   c6        |     0.012 |
+|   dbtnc     |     0.033 |
+|   dbtnd     |     0.030 |
+|   dbtnl     |     0.032 |
+|   dbtnr     |     0.030 |
+|   dhs[0]    |     0.031 |
+|   dhs[1]    |     0.032 |
+|   dhs[2]    |     0.031 |
+|   dhs[3]    |     0.030 |
+|   dhs[4]    |     0.029 |
+|   dhs[5]    |     0.031 |
+|   dhs[6]    |     0.032 |
+|   dhs[7]    |     0.033 |
+|   drst      |     0.035 |
+|   m1        |     0.193 |
+|     ac1     |     0.034 |
+|     m0      |     0.152 |
+|       pwm_0 |     0.152 |
+|   obtnc     |     0.003 |
+|   obtnd     |     0.004 |
+|   ohs[0]    |     0.003 |
+|   ohs[1]    |     0.004 |
+|   ohs[3]    |     0.003 |
+|   ohs[4]    |     0.003 |
+|   ohs[6]    |     0.012 |
++-------------+-----------+
 
 

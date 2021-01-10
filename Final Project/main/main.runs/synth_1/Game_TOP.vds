@@ -2,8 +2,8 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Sun Jan  3 22:15:40 2021
-# Process ID: 4596
+# Start of session at: Sun Jan 10 19:08:57 2021
+# Process ID: 9876
 # Current directory: E:/Code/Vivado/Final Project/main/main.runs/synth_1
 # Command line: vivado.exe -log Game_TOP.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Game_TOP.tcl
 # Log file: E:/Code/Vivado/Final Project/main/main.runs/synth_1/Game_TOP.vds
@@ -17,11 +17,13 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 2928
+INFO: [Synth 8-7075] Helper process launched with PID 24636
+WARNING: [Synth 8-2611] redeclaration of ansi port state is not allowed [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/motor.v:12]
+WARNING: [Synth 8-992] start is already implicitly declared earlier [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/motor.v:17]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1029.027 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1001.309 ; gain = 0.000
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'Game_TOP' [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/Game_TOP.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Game_TOP' [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/Game_TOP.v:22]
 	Parameter IDLE bound to: 4'b0000 
 	Parameter waiting_hit_signal bound to: 4'b0001 
 	Parameter waiting_reset bound to: 4'b0010 
@@ -34,56 +36,50 @@ INFO: [Synth 8-6157] synthesizing module 'Game_TOP' [E:/Code/Vivado/Final Projec
 	Parameter OUT bound to: 3'b100 
 	Parameter HR bound to: 3'b101 
 	Parameter VOID bound to: 3'b110 
-INFO: [Synth 8-6157] synthesizing module 'debounce' [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/Game_TOP.v:584]
-INFO: [Synth 8-6155] done synthesizing module 'debounce' (1#1) [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/Game_TOP.v:584]
-INFO: [Synth 8-6157] synthesizing module 'onepulse' [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/Game_TOP.v:599]
-INFO: [Synth 8-6155] done synthesizing module 'onepulse' (2#1) [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/Game_TOP.v:599]
+INFO: [Synth 8-6157] synthesizing module 'debounce' [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/Game_TOP.v:566]
+INFO: [Synth 8-6155] done synthesizing module 'debounce' (1#1) [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/Game_TOP.v:566]
+INFO: [Synth 8-6157] synthesizing module 'onepulse' [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/Game_TOP.v:581]
+INFO: [Synth 8-6155] done synthesizing module 'onepulse' (2#1) [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/Game_TOP.v:581]
 INFO: [Synth 8-6157] synthesizing module 'SevenSegment' [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/SevenSegment.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'SevenSegment' (3#1) [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/SevenSegment.v:23]
-INFO: [Synth 8-6157] synthesizing module 'convert_num' [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/Game_TOP.v:614]
-INFO: [Synth 8-155] case statement is not full and has no default [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/Game_TOP.v:621]
-INFO: [Synth 8-6155] done synthesizing module 'convert_num' (4#1) [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/Game_TOP.v:614]
-INFO: [Synth 8-155] case statement is not full and has no default [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/Game_TOP.v:239]
-INFO: [Synth 8-155] case statement is not full and has no default [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/Game_TOP.v:211]
-INFO: [Synth 8-6157] synthesizing module 'counter' [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/Game_TOP.v:565]
-INFO: [Synth 8-6155] done synthesizing module 'counter' (5#1) [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/Game_TOP.v:565]
-INFO: [Synth 8-6155] done synthesizing module 'Game_TOP' (6#1) [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/Game_TOP.v:23]
+INFO: [Synth 8-6157] synthesizing module 'convert_num' [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/Game_TOP.v:595]
+INFO: [Synth 8-155] case statement is not full and has no default [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/Game_TOP.v:602]
+INFO: [Synth 8-6155] done synthesizing module 'convert_num' (4#1) [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/Game_TOP.v:595]
+INFO: [Synth 8-155] case statement is not full and has no default [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/Game_TOP.v:234]
+INFO: [Synth 8-155] case statement is not full and has no default [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/Game_TOP.v:206]
+INFO: [Synth 8-6157] synthesizing module 'motor' [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/motor.v:1]
+	Parameter IDLE bound to: 2'b00 
+	Parameter wait_run bound to: 2'b01 
+	Parameter run bound to: 2'b10 
+INFO: [Synth 8-6157] synthesizing module 'assign_counter' [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/motor.v:74]
+INFO: [Synth 8-6155] done synthesizing module 'assign_counter' (5#1) [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/motor.v:74]
+INFO: [Synth 8-6157] synthesizing module 'motor_pwm' [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/motor.v:94]
+INFO: [Synth 8-6157] synthesizing module 'PWM_gen' [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/motor.v:112]
+INFO: [Synth 8-6155] done synthesizing module 'PWM_gen' (6#1) [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/motor.v:112]
+INFO: [Synth 8-6155] done synthesizing module 'motor_pwm' (7#1) [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/motor.v:94]
+INFO: [Synth 8-155] case statement is not full and has no default [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/motor.v:41]
+INFO: [Synth 8-6155] done synthesizing module 'motor' (8#1) [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/motor.v:1]
+INFO: [Synth 8-6157] synthesizing module 'counter' [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/Game_TOP.v:547]
+INFO: [Synth 8-6155] done synthesizing module 'counter' (9#1) [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/Game_TOP.v:547]
+INFO: [Synth 8-6155] done synthesizing module 'Game_TOP' (10#1) [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/Game_TOP.v:22]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1029.027 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1001.309 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1029.027 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1001.309 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1029.027 ; gain = 0.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1001.309 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1029.027 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1001.309 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Parsing XDC File [E:/Code/Vivado/Final Project/main/main.srcs/constrs_1/new/yccc.xdc]
-WARNING: [Vivado 12-584] No ports matched 'eng_r[1]'. [E:/Code/Vivado/Final Project/main/main.srcs/constrs_1/new/yccc.xdc:49]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/Code/Vivado/Final Project/main/main.srcs/constrs_1/new/yccc.xdc:49]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'eng_r[0]'. [E:/Code/Vivado/Final Project/main/main.srcs/constrs_1/new/yccc.xdc:50]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/Code/Vivado/Final Project/main/main.srcs/constrs_1/new/yccc.xdc:50]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'eng_l[1]'. [E:/Code/Vivado/Final Project/main/main.srcs/constrs_1/new/yccc.xdc:51]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/Code/Vivado/Final Project/main/main.srcs/constrs_1/new/yccc.xdc:51]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'eng_l[0]'. [E:/Code/Vivado/Final Project/main/main.srcs/constrs_1/new/yccc.xdc:52]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/Code/Vivado/Final Project/main/main.srcs/constrs_1/new/yccc.xdc:52]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'eng_en[1]'. [E:/Code/Vivado/Final Project/main/main.srcs/constrs_1/new/yccc.xdc:53]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/Code/Vivado/Final Project/main/main.srcs/constrs_1/new/yccc.xdc:53]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'eng_en[0]'. [E:/Code/Vivado/Final Project/main/main.srcs/constrs_1/new/yccc.xdc:54]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/Code/Vivado/Final Project/main/main.srcs/constrs_1/new/yccc.xdc:54]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 WARNING: [Vivado 12-584] No ports matched 'display[31]'. [E:/Code/Vivado/Final Project/main/main.srcs/constrs_1/new/yccc.xdc:55]
 CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/Code/Vivado/Final Project/main/main.srcs/constrs_1/new/yccc.xdc:55]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
@@ -161,28 +157,29 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/Game_TOP_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1030.836 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1032.824 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1030.836 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 1032.824 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1030.836 ; gain = 1.809
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1032.824 ; gain = 31.516
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1030.836 ; gain = 1.809
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1032.824 ; gain = 31.516
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 1030.836 ; gain = 1.809
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1032.824 ; gain = 31.516
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'digit_reg' in module 'SevenSegment'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'motor'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'Game_TOP'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
@@ -195,7 +192,20 @@ INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'Game_
                  iSTATE2 |                              100 |                             0111
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'digit_reg' using encoding 'sequential' in module 'SevenSegment'
-WARNING: [Synth 8-327] inferring latch for variable 'out_reg' [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/Game_TOP.v:622]
+WARNING: [Synth 8-327] inferring latch for variable 'out_reg' [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/Game_TOP.v:603]
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_sequential_next_state_reg' [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/motor.v:44]
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_next_state_reg' [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/motor.v:44]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                              001 |                               00
+                wait_run |                              010 |                               01
+                     run |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'motor'
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_next_state_reg' [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/motor.v:44]
+WARNING: [Synth 8-327] inferring latch for variable 'next_left_motor_reg' [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/motor.v:47]
+WARNING: [Synth 8-327] inferring latch for variable 'start_reg' [E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/motor.v:15]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -207,8 +217,9 @@ WARNING: [Synth 8-327] inferring latch for variable 'out_reg' [E:/Code/Vivado/Fi
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'Game_TOP'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 1030.836 ; gain = 1.809
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 1032.824 ; gain = 31.516
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-223] decloning instance 'm1/m0' (motor_pwm) to 'm1/m1'
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -221,12 +232,12 @@ Detailed RTL Component Info :
 	   2 Input    2 Bit       Adders := 2     
 +---Registers : 
 	               32 Bit    Registers := 1     
-	               10 Bit    Registers := 13    
+	               10 Bit    Registers := 14    
 	                8 Bit    Registers := 1     
 	                4 Bit    Registers := 7     
 	                3 Bit    Registers := 2     
 	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 28    
+	                1 Bit    Registers := 29    
 +---Muxes : 
 	   5 Input    8 Bit        Muxes := 5     
 	   8 Input    8 Bit        Muxes := 3     
@@ -235,17 +246,18 @@ Detailed RTL Component Info :
 	   2 Input    4 Bit        Muxes := 12    
 	   3 Input    4 Bit        Muxes := 1     
 	   5 Input    3 Bit        Muxes := 4     
+	   3 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 10    
 	   8 Input    3 Bit        Muxes := 2     
 	   7 Input    3 Bit        Muxes := 1     
-	   2 Input    3 Bit        Muxes := 7     
 	   7 Input    2 Bit        Muxes := 1     
 	   2 Input    2 Bit        Muxes := 1     
 	   5 Input    2 Bit        Muxes := 2     
 	  21 Input    1 Bit        Muxes := 6     
-	   2 Input    1 Bit        Muxes := 3     
+	   3 Input    1 Bit        Muxes := 6     
+	   2 Input    1 Bit        Muxes := 4     
 	   7 Input    1 Bit        Muxes := 4     
 	   8 Input    1 Bit        Muxes := 1     
-	   3 Input    1 Bit        Muxes := 1     
 	   5 Input    1 Bit        Muxes := 15    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -262,8 +274,11 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
+DSP Report: Generating DSP pwm_0/count_duty0, operation Mode is: A*B.
+DSP Report: operator pwm_0/count_duty0 is absorbed into DSP pwm_0/count_duty0.
+DSP Report: operator pwm_0/count_duty0 is absorbed into DSP pwm_0/count_duty0.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1030.836 ; gain = 1.809
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:24 . Memory (MB): peak = 1032.824 ; gain = 31.516
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -282,6 +297,15 @@ ROM: Preliminary Mapping	Report
 |Game_TOP    | c6/out     | 32x8          | LUT            | 
 +------------+------------+---------------+----------------+
 
+
+DSP: Preliminary Mapping	Report (see note below)
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|PWM_gen     | A*B         | 14     | 11     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
@@ -289,19 +313,19 @@ Finished ROM, RAM, DSP and Shift Register Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:33 . Memory (MB): peak = 1030.836 ; gain = 1.809
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:35 ; elapsed = 00:00:41 . Memory (MB): peak = 1062.871 ; gain = 61.562
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:33 . Memory (MB): peak = 1030.836 ; gain = 1.809
+Finished Timing Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:42 . Memory (MB): peak = 1063.465 ; gain = 62.156
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:29 ; elapsed = 00:00:33 . Memory (MB): peak = 1047.188 ; gain = 18.160
+Finished Technology Mapping : Time (s): cpu = 00:00:35 ; elapsed = 00:00:42 . Memory (MB): peak = 1091.477 ; gain = 90.168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -319,37 +343,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 1051.930 ; gain = 22.902
+Finished IO Insertion : Time (s): cpu = 00:00:41 ; elapsed = 00:00:47 . Memory (MB): peak = 1097.223 ; gain = 95.914
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 1051.930 ; gain = 22.902
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:41 ; elapsed = 00:00:47 . Memory (MB): peak = 1097.223 ; gain = 95.914
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 1051.930 ; gain = 22.902
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:41 ; elapsed = 00:00:48 . Memory (MB): peak = 1097.223 ; gain = 95.914
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 1051.930 ; gain = 22.902
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:41 ; elapsed = 00:00:48 . Memory (MB): peak = 1097.223 ; gain = 95.914
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 1051.930 ; gain = 22.902
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:41 ; elapsed = 00:00:48 . Memory (MB): peak = 1097.223 ; gain = 95.914
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 1051.930 ; gain = 22.902
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:41 ; elapsed = 00:00:48 . Memory (MB): peak = 1097.223 ; gain = 95.914
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -362,46 +386,46 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+-------+------+
-|      |Cell   |Count |
-+------+-------+------+
-|1     |BUFG   |     1|
-|2     |CARRY4 |    22|
-|3     |LUT1   |     5|
-|4     |LUT2   |    23|
-|5     |LUT3   |    36|
-|6     |LUT4   |    81|
-|7     |LUT5   |    56|
-|8     |LUT6   |   172|
-|9     |FDCE   |    27|
-|10    |FDRE   |   282|
-|11    |FDSE   |     5|
-|12    |LD     |    45|
-|13    |IBUF   |    21|
-|14    |OBUF   |    12|
-|15    |OBUFT  |    16|
-+------+-------+------+
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BUFG    |     1|
+|2     |CARRY4  |    46|
+|3     |DSP48E1 |     1|
+|4     |LUT1    |     9|
+|5     |LUT2    |    78|
+|6     |LUT3    |    37|
+|7     |LUT4    |   105|
+|8     |LUT5    |    62|
+|9     |LUT6    |   176|
+|10    |FDCE    |    60|
+|11    |FDRE    |   314|
+|12    |FDSE    |     6|
+|13    |LD      |    50|
+|14    |IBUF    |    21|
+|15    |OBUF    |    34|
++------+--------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 1051.930 ; gain = 22.902
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:41 ; elapsed = 00:00:48 . Memory (MB): peak = 1097.223 ; gain = 95.914
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:00:36 . Memory (MB): peak = 1051.930 ; gain = 21.094
-Synthesis Optimization Complete : Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 1051.930 ; gain = 22.902
+Synthesis finished with 0 errors, 0 critical warnings and 6 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:32 ; elapsed = 00:00:45 . Memory (MB): peak = 1097.223 ; gain = 64.398
+Synthesis Optimization Complete : Time (s): cpu = 00:00:41 ; elapsed = 00:00:48 . Memory (MB): peak = 1097.223 ; gain = 95.914
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1064.047 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 67 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1097.223 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 97 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1064.047 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1097.223 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 45 instances were transformed.
-  LD => LDCE: 45 instances
+  A total of 50 instances were transformed.
+  LD => LDCE: 50 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-34 Infos, 31 Warnings, 30 Critical Warnings and 0 Errors encountered.
+46 Infos, 32 Warnings, 24 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:42 ; elapsed = 00:00:49 . Memory (MB): peak = 1064.047 ; gain = 35.020
+synth_design: Time (s): cpu = 00:00:48 ; elapsed = 00:00:59 . Memory (MB): peak = 1097.223 ; gain = 95.914
 INFO: [Common 17-1381] The checkpoint 'E:/Code/Vivado/Final Project/main/main.runs/synth_1/Game_TOP.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Game_TOP_utilization_synth.rpt -pb Game_TOP_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Jan  3 22:16:39 2021...
+INFO: [Common 17-206] Exiting Vivado at Sun Jan 10 19:10:14 2021...

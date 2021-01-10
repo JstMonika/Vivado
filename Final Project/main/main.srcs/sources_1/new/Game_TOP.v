@@ -19,7 +19,6 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-// TODO: signal list
 module Game_TOP(
     input clk, // W5
     input rst, // T18
@@ -32,14 +31,13 @@ module Game_TOP(
     
     output [7:0] display,
     output [3:0] digit,
-    output [15:0] LED
+    output [15:0] LED,
     
-    // output [1:0] eng_en,
-    // output [1:0] eng_l,
-    // output [1:0] eng_r
+    output [1:0] eng_en,
+    output [1:0] eng_l,
+    output [1:0] eng_r
     
 );
-    // TODO: instance of array available?
     wire de_rst, op_rst;
     debounce drst(clk, rst, de_rst);
     onepulse orst(clk, de_rst, op_rst);
@@ -64,7 +62,6 @@ module Game_TOP(
     debounce dbtnd(clk, BTND, de_BTND);
     onepulse obtnd(clk, de_BTND, op_BTND);
     
-    // TODO: change?
     parameter IDLE = 4'd0;
     parameter waiting_hit_signal = 4'd1;
     parameter waiting_reset = 4'd2;
@@ -480,7 +477,6 @@ module Game_TOP(
                 end
             end
             
-            // TODO: finish.
             clear: begin
                 
                 if (out_clear)
@@ -502,7 +498,6 @@ module Game_TOP(
                 
             end
             
-            // TODO: done.
             DONE: begin
                 
                 next_s_count = 1'b1;
@@ -536,28 +531,17 @@ module Game_TOP(
         
     end
     
-    // TODO: turn on engine.
+    wire [1:0] motor_state;
     wire pitch = (state == waiting_reset) && op_BTNC;
     
-    // FIXME:
-    // wire [1:0] eng_en;  // left, right.
-    // wire [1:0] eng_l;
-    // wire [1:0] eng_r;
-    // engine E(clk, pitch, eng_en, eng_l, eng_r);
-    
+    assign eng_l = 2'b10;
+    assign eng_r = 2'b01;
+    motor m1(clk, op_rst, pitch, eng_en, motor_state);
     counter C(clk, s_count, finish, half_finish);
     counter C2(clk, in_clear, out_clear, half_out_clear);
     
-endmodule
-
-// FIXME:
-module engine(clk, trigger, en, l, r);
-    input clk, trigger;
-    output [1:0] en, l, r;
+    assign LED = {eng_en[1], eng_l, 4'd0, motor_state, 4'd0, eng_r, eng_en[0]};
     
-    assign en = 2'b00;
-    assign l = 2'b00;
-    assign r = 2'b00;
 endmodule
 
 module counter(clk, in, out, half);
@@ -608,7 +592,6 @@ module onepulse(clk, in, out);
     
 endmodule
 
-// IMPORTANT: need to fix it.
 module convert_num(in, point, out);
     input [3:0] in;
     input point;

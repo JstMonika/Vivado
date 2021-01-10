@@ -88,6 +88,7 @@ OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
   {E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/SevenSegment.v}
+  {E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/motor.v}
   {E:/Code/Vivado/Final Project/main/main.srcs/sources_1/new/Game_TOP.v}
 }
 OPTRACE "Adding files" END { }
