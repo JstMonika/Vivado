@@ -31,6 +31,8 @@ module Game_TOP(
     
     output [7:0] display,
     output [3:0] digit,
+    output [7:0] remote_display,
+    output [3:0] remote_digit,
     output [15:0] LED,
     
     output [1:0] eng_en,
@@ -42,9 +44,9 @@ module Game_TOP(
     debounce drst(clk, rst, de_rst);
     onepulse orst(clk, de_rst, op_rst);
     
-    wire [7:0] de_hit_signal, op_hit_signal;
-    debounce dhs [7:0] (clk, hit_signal, de_hit_signal);
-    onepulse ohs [7:0] (clk, de_hit_signal, op_hit_signal);
+    wire [5:0] de_hit_signal, op_hit_signal;
+    debounce dhs [5:0] (clk, hit_signal, de_hit_signal);
+    onepulse ohs [5:0] (clk, de_hit_signal, op_hit_signal);
     
     wire de_BTNC, op_BTNC;
     debounce dbtnc(clk, BTNC, de_BTNC);
@@ -102,29 +104,40 @@ module Game_TOP(
     
     reg [31:0] data;
     wire [31:0] next_data;
+    
+    reg [31:0] remote_data;
+    reg [31:0] remote_next_data;
     reg [7:0] seg[3:0];
     
+    wire score_infor;
+    remote_display_counter RDC1(.clk(clk), .rst(op_rst), .out(score_infor));
+    
     SevenSegment S1(.display(display), .digit(digit), .input_nums(data), .clk(clk), .rst(op_rst));
+    SevenSegment S2(.display(remote_display), .digit(remote_digit), .input_nums(remote_data), .clk(clk), .rst(op_rst));
     
     assign next_data = {seg[3], seg[2], seg[1], seg[0]};
+    
+    reg [2:0] hit_result;
     
     always @(posedge clk) begin
         if (op_rst) begin
             state <= IDLE;
-            game_stage <= 4'b0;
+            game_stage <= 4'd0;
             select_stage <= 4'd1;
             finish_stage <= 4'd3;
-            strike <= 2'b0;
-            out <= 2'b0;
-            base <= 3'b0;
-            top_point_l <= 4'b0;
-            top_point_r <= 4'b0;
-            bottom_point_l <= 4'b0;
-            bottom_point_r <= 4'b0;
-            s_count <= 1'b0;
+            strike <= 2'd0;
+            out <= 2'd0;
+            base <= 3'd0;
+            top_point_l <= 4'd0;
+            top_point_r <= 4'd0;
+            bottom_point_l <= 4'd0;
+            bottom_point_r <= 4'd0;
+            hit_result <= 3'd0;
+            s_count <= 1'd0;
             result <= VOID;
-            is_top <= 1'b0;
-            data <= 32'b0;
+            is_top <= 1'd0;
+            remote_data <= 32'd0;
+            data <= 32'd0;
         end
         else begin
             state <= next_state;
@@ -138,9 +151,11 @@ module Game_TOP(
             top_point_r <= next_top_point_r;
             bottom_point_l <= next_bottom_point_l;
             bottom_point_r <= next_bottom_point_r;
+            hit_result <= hit_result + 3'd1;
             s_count <= next_s_count;
             result <= next_result;
             is_top <= next_is_top;
+            remote_data <= remote_next_data;
             data <= next_data;
         end
     end
@@ -198,6 +213,16 @@ module Game_TOP(
         next_result = result;
         record_hit_finish = (result != VOID);
         
+        if (score_infor) begin
+            remote_next_data = {top_lnum, top_rnum, bottom_lnum, bottom_rnum};
+        end
+        else begin
+            remote_next_data = {strike != 2'b0, 2'b0, out != 2'b0, 2'b0, base[2], 1'b0,
+                                strike[1], 2'b0, out[1], 2'b0, base[1], 1'b0,
+                                6'b0, base[0], 1'b0,
+                                gs_num};
+        end
+        
         seg[3] = 8'b0;
         seg[2] = 8'b0;
         seg[1] = 8'b0;
@@ -224,6 +249,7 @@ module Game_TOP(
                 seg[1] = 8'b11101110;
                 seg[0] = ss_num;
                 
+                remote_next_data = 32'b0111_0110_1101_0000_1101_0000_1101_0000;
             end
             
             waiting_hit_signal: begin
@@ -372,14 +398,23 @@ module Game_TOP(
                 if (result == VOID) begin
                     if (hit) begin
                         case (op_hit_signal)
-                            8'b10000000: next_result = STRIKE;
-                            8'b01000000: next_result = B1;
-                            8'b00100000,
-                            8'b00010000: next_result = B2;
-                            8'b00001000: next_result = B3;
-                            8'b00000100,
-                            8'b00000010: next_result = OUT;
-                            8'b00000001: next_result = HR;
+                            6'b100000, 
+                            6'b001000: begin 
+                                case (hit_result)
+                                    3'd0,
+                                    3'd1,
+                                    3'd2,
+                                    3'd3,
+                                    3'd4: next_result = B1;
+                                    3'd5,
+                                    3'd6: next_result = B2;
+                                    3'd7: next_result = B3;
+                                endcase
+                            end
+                            6'b010000: next_result = STRIKE;
+                            6'b000100,
+                            6'b000001: next_result = OUT;
+                            6'b000010: next_result = strike;
                             default: next_result = VOID;
                         endcase
                     end
@@ -560,6 +595,25 @@ module counter(clk, in, out, half);
     
     assign half = (count == 29'b0_1000_0000_0000_0000_0000_0000_0000);
     assign out = count[28];
+    
+endmodule
+
+module remote_display_counter(clk, rst, out);
+    input clk, rst;
+    output out;
+    
+    reg [29:0] count;
+    
+    always @(posedge clk) begin
+        if (rst) begin
+            count <= 30'd0;
+        end
+        else begin
+            count <= count + 30'd1;
+        end
+    end
+    
+    assign out = count[29];
     
 endmodule
 
