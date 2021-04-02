@@ -22,7 +22,7 @@
 module Game_TOP(
     input clk, // W5
     input rst, // T18
-    input [7:0] hit_signal, // pins
+    input [5:0] hit_signal, // pins
     input BTNC, // U18
     input BTNL, // W19
     input BTNR, // T17

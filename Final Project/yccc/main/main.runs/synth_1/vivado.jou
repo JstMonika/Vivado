@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Thu Jan 14 12:09:59 2021
+# Process ID: 2332
+# Current directory: C:/Users/USER/Desktop/yccc/main/main.runs/synth_1
+# Command line: vivado.exe -log Game_TOP.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Game_TOP.tcl
+# Log file: C:/Users/USER/Desktop/yccc/main/main.runs/synth_1/Game_TOP.vds
+# Journal file: C:/Users/USER/Desktop/yccc/main/main.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source Game_TOP.tcl -notrace

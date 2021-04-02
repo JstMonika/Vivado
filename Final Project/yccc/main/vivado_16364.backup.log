@@ -1,0 +1,313 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Thu Jan 14 04:01:19 2021
+# Process ID: 16364
+# Current directory: C:/Users/USER/Desktop/yccc/main
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10316 C:\Users\USER\Desktop\yccc\main\main.xpr
+# Log file: C:/Users/USER/Desktop/yccc/main/vivado.log
+# Journal file: C:/Users/USER/Desktop/yccc/main\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/USER/Desktop/yccc/main/main.xpr
+INFO: [Project 1-313] Project file moved from 'E:/Code/Vivado/Final Project/main' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2020.1/data/ip'.
+open_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:08 . Memory (MB): peak = 1010.094 ; gain = 0.000
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 12
+[Thu Jan 14 04:03:04 2021] Launched synth_1...
+Run output will be captured here: C:/Users/USER/Desktop/yccc/main/main.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a35tcpg236-1
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1099.051 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 55 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2020.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc]
+WARNING: [Vivado 12-584] No ports matched 'hit_signal[7]'. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:1]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:1]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hit_signal[6]'. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:2]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:2]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hit_signal[7]'. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:41]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:41]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hit_signal[6]'. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:42]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:42]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'display[31]'. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:55]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:55]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'display[30]'. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:56]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:56]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'display[29]'. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:57]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:57]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'display[28]'. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:58]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:58]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'display[27]'. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:59]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:59]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'display[26]'. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:60]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:60]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'display[25]'. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:61]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:61]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'display[24]'. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:62]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:62]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'display[23]'. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:63]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:63]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'display[22]'. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:64]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:64]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'display[21]'. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:65]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:65]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'display[20]'. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:66]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:66]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'display[19]'. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:67]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:67]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'display[18]'. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:68]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:68]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'display[17]'. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:69]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:69]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'display[16]'. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:70]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:70]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'display[15]'. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:71]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:71]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'display[14]'. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:72]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:72]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'display[13]'. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:73]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:73]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'display[12]'. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:74]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:74]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'display[11]'. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:75]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:75]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'display[10]'. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:76]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:76]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'display[9]'. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:77]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:77]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'display[8]'. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:78]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc:78]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [C:/Users/USER/Desktop/yccc/main/main.srcs/constrs_1/new/yccc.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1179.176 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:16 ; elapsed = 00:00:14 . Memory (MB): peak = 1314.094 ; gain = 304.000
+place_ports {hit_signal[5]} R2
+place_ports {hit_signal[4]} T1
+place_ports {hit_signal[3]} U1
+place_ports {hit_signal[2]} W2
+place_ports {hit_signal[1]} R3
+place_ports {hit_signal[0]} T2
+save_constraints
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.040 . Memory (MB): peak = 1795.730 ; gain = 13.820
+[Thu Jan 14 04:08:32 2021] Launched impl_1...
+Run output will be captured here: C:/Users/USER/Desktop/yccc/main/main.runs/impl_1/runme.log
+open_hw_manager
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2020.1
+  **** Build date : May 27 2020 at 20:24:38
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+****** Xilinx cs_server v2020.1.0
+  **** Build date : May 14 2020-09:10:29
+    ** Copyright 2017-2020 Xilinx, Inc. All Rights Reserved.
+
+
+
+connect_hw_server: Time (s): cpu = 00:00:01 ; elapsed = 00:00:13 . Memory (MB): peak = 1804.379 ; gain = 8.648
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183712690A
+open_hw_target: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 3110.074 ; gain = 1305.695
+set_property PROGRAM.FILE {C:/Users/USER/Desktop/yccc/main/main.runs/impl_1/Game_TOP.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1435] Device xc7a35t (JTAG device index = 0) is not programmed (DONE status = 0).
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/USER/Desktop/yccc/main/main.runs/impl_1/Game_TOP.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Thu Jan 14 04:18:32 2021] Launched synth_1...
+Run output will be captured here: C:/Users/USER/Desktop/yccc/main/main.runs/synth_1/runme.log
+[Thu Jan 14 04:18:32 2021] Launched impl_1...
+Run output will be captured here: C:/Users/USER/Desktop/yccc/main/main.runs/impl_1/runme.log
+reset_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Thu Jan 14 04:21:08 2021] Launched synth_1...
+Run output will be captured here: C:/Users/USER/Desktop/yccc/main/main.runs/synth_1/runme.log
+[Thu Jan 14 04:21:08 2021] Launched impl_1...
+Run output will be captured here: C:/Users/USER/Desktop/yccc/main/main.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Thu Jan 14 04:25:11 2021] Launched synth_1...
+Run output will be captured here: C:/Users/USER/Desktop/yccc/main/main.runs/synth_1/runme.log
+[Thu Jan 14 04:25:11 2021] Launched impl_1...
+Run output will be captured here: C:/Users/USER/Desktop/yccc/main/main.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/USER/Desktop/yccc/main/main.runs/impl_1/Game_TOP.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Thu Jan 14 04:46:39 2021] Launched synth_1...
+Run output will be captured here: C:/Users/USER/Desktop/yccc/main/main.runs/synth_1/runme.log
+[Thu Jan 14 04:46:39 2021] Launched impl_1...
+Run output will be captured here: C:/Users/USER/Desktop/yccc/main/main.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/USER/Desktop/yccc/main/main.runs/impl_1/Game_TOP.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+create_project music C:/Users/USER/Desktop/yccc -part xc7a35tcpg236-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2020.1/data/ip'.
+ERROR: [Project 1-202] Error writing the XML file 'C:/Users/USER/Desktop/yccc/music.xpr'
+ERROR: [Common 17-69] Command failed: ERROR: [Project 1-202] Error writing the XML file 'C:/Users/USER/Desktop/yccc/music.xpr'
+
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+CRITICAL WARNING: [filemgmt 20-730] Could not find a top module in the fileset sources_1.
+Resolution: With the gui up, review the source files in the Sources window. Use Add Sources to add any needed sources. If the files are disabled, enable them. You can also select the file and choose Set Used In from the pop-up menu. Review if they are being used at the proper points of the flow.
+ERROR: [Common 17-70] Application Exception: Top module not set for fileset 'sources_1'. Please ensure that a valid value is provided for 'top'. The value for 'top' can be set/changed using the 'Top Module Name' field under 'Project Settings', or using the 'set_property top' Tcl command (e.g. set_property top <name> [current_fileset]).
+import_files -norecurse {{C:/Users/USER/Desktop/Keyboard-and-Audio-Sample-Codes/demo2_music box/Unit9_demo2_music box/PlayerCtrl.v} {C:/Users/USER/Desktop/Keyboard-and-Audio-Sample-Codes/demo2_music box/Unit9_demo2_music box/Music.v} {C:/Users/USER/Desktop/Keyboard-and-Audio-Sample-Codes/demo2_music box/Unit9_demo2_music box/TOP.v} {C:/Users/USER/Desktop/Keyboard-and-Audio-Sample-Codes/demo2_music box/Unit9_demo2_music box/PWM.v}}
+current_project main
+close_hw_manager
+current_project music
+close_project
+open_project C:/Users/USER/Desktop/yccc/music.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2020.1/data/ip'.
+update_compile_order -fileset sources_1
+add_files -fileset constrs_1 -norecurse {{C:/Users/USER/Desktop/Keyboard-and-Audio-Sample-Codes/demo2_music box/Unit9_demo2_music box/constraints.xdc}}
+import_files -fileset constrs_1 {{C:/Users/USER/Desktop/Keyboard-and-Audio-Sample-Codes/demo2_music box/Unit9_demo2_music box/constraints.xdc}}
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+[Thu Jan 14 05:14:13 2021] Launched synth_1...
+Run output will be captured here: C:/Users/USER/Desktop/yccc/music.runs/synth_1/runme.log
+[Thu Jan 14 05:14:13 2021] Launched impl_1...
+Run output will be captured here: C:/Users/USER/Desktop/yccc/music.runs/impl_1/runme.log
+open_hw_manager
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2020.1
+  **** Build date : May 27 2020 at 20:24:38
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+****** Xilinx cs_server v2020.1.0
+  **** Build date : May 14 2020-09:10:29
+    ** Copyright 2017-2020 Xilinx, Inc. All Rights Reserved.
+
+
+
+connect_hw_server: Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 3307.406 ; gain = 0.000
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183712690A
+set_property PROGRAM.FILE {C:/Users/USER/Desktop/yccc/music.runs/impl_1/TOP.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1435] Device xc7a35t (JTAG device index = 0) is not programmed (DONE status = 0).
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/USER/Desktop/yccc/music.runs/impl_1/TOP.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210183712690A
+close_project
+****** Webtalk v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+  **** IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/USER/Desktop/yccc/music.hw/webtalk/labtool_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/USER/Desktop/yccc/music.hw/webtalk/usage_statistics_ext_labtool.xml' has been successfully sent to Xilinx on Thu Jan 14 05:22:57 2021. For additional details about this file, please refer to the WebTalk help file at D:/Xilinx/Vivado/2020.1/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Thu Jan 14 05:22:57 2021...
+close_project: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 3307.406 ; gain = 0.000
+place_ports {hit_signal[5]} J1
+place_ports {hit_signal[4]} L2
+place_ports {hit_signal[3]} J2
+place_ports {hit_signal[2]} H1
+place_ports {hit_signal[1]} K2
+place_ports {hit_signal[0]} H2
+save_constraints -force
+reset_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Thu Jan 14 06:02:15 2021] Launched impl_1...
+Run output will be captured here: C:/Users/USER/Desktop/yccc/main/main.runs/impl_1/runme.log
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Jan 14 06:09:43 2021...
